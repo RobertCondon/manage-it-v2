@@ -216,19 +216,19 @@
             <div class="dropdown {showServices ? 'show' : ''}">
                 <div class="grid">
                     <div class="link-group">
-                        <a href="services/networking" class="dropdown-link {service === 'Networking' ? 'active' : ''}" on:mouseenter={() => setService('Networking')}>
+                        <a href="/services/networking" class="dropdown-link {service === 'Networking' ? 'active' : ''}" on:mouseenter={() => setService('Networking')}>
                             <ArrowRightOutline class="arrow {service === 'Networking' ? 'show' : 'hidden'}" />
                             <span>Networking</span>
                         </a>
-                        <a href="#" class="dropdown-link {service === 'Office 365' ? 'active' : ''}" on:mouseenter={() => setService('Office 365')}>
+                        <a href="/services/office365" class="dropdown-link {service === 'Office 365' ? 'active' : ''}" on:mouseenter={() => setService('Office 365')}>
                             <ArrowRightOutline class="arrow w-7 {service === 'Office 365' ? 'show' : 'hidden'}" />
                             <span>Office 365</span>
                         </a>
-                        <a href="#" class="dropdown-link {service === 'IT Support' ? 'active' : ''}" on:mouseenter={() => setService('IT Support')}>
+                        <a href="/services/it-support" class="dropdown-link {service === 'IT Support' ? 'active' : ''}" on:mouseenter={() => setService('IT Support')}>
                             <ArrowRightOutline class="arrow {service === 'IT Support' ? 'show' : 'hidden'}" />
                             <span>IT Support</span>
                         </a>
-                        <a href="#" class="dropdown-link {service === 'Cloud Migration' ? 'active' : ''}" on:mouseenter={() => setService('Cloud Migration')}>
+                        <a href="/services/cloud-migration" class="dropdown-link {service === 'Cloud Migration' ? 'active' : ''}" on:mouseenter={() => setService('Cloud Migration')}>
                             <ArrowRightOutline class="arrow {service === 'Cloud Migration' ? 'show' : 'hidden'}" />
                             <span>Cloud Migration</span>
                         </a>
