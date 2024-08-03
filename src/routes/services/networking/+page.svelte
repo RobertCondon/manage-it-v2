@@ -42,7 +42,7 @@
                 </div>
             </div>
         </section>
-        <section class="w-full py-12 md:py-24 lg:py-32 bg-muted px-40">
+        <section class="w-full py-12 md:py-24 lg:py-32 bg-muted px-[10vw]">
             <div class="container px-4 md:px-6">
                 <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
                     <div class="space-y-4">

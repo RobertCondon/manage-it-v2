@@ -39,7 +39,7 @@
     <Sidebar>
         <SidebarWrapper divClass="overflow-y-auto py-4 px-3 rounded dark:bg-gray-800">
             <SidebarGroup>
-                <SidebarItem label="Home">
+                <SidebarItem href="/" label="Home" on:click={() => (hidden2 = true)}>
                     <svelte:fragment slot="icon">
                         <HomeOutline
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
@@ -50,24 +50,24 @@
                         <DesktopPcOutline
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
                     </svelte:fragment>
-                    <SidebarDropdownItem label="Networking"/>
-                    <SidebarDropdownItem label="Office 365"/>
-                    <SidebarDropdownItem label="IT Support"/>
-                    <SidebarDropdownItem label="Cloud Migration"/>
+                    <SidebarDropdownItem href="/services/networking" on:click={() => (hidden2 = true)} label="Networking"/>
+                    <SidebarDropdownItem href="/services/office365" on:click={() => (hidden2 = true)} label="Office 365"/>
+                    <SidebarDropdownItem href="/services/it-support" on:click={() => (hidden2 = true)} label="IT Support"/>
+                    <SidebarDropdownItem href="/services/cloud-migration" on:click={() => (hidden2 = true)} label="Cloud Migration"/>
                 </SidebarDropdownWrapper>
-                <SidebarItem label="About">
+                <SidebarItem label="About" on:click={() => (hidden2 = true)}>
                     <svelte:fragment slot="icon">
                         <UsersGroupOutline
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
                     </svelte:fragment>
                 </SidebarItem>
-                <SidebarItem label="Contact">
+                <SidebarItem label="Contact" on:click={() => (hidden2 = true)}>
                     <svelte:fragment slot="icon">
                         <EnvelopeOpenOutline
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
                     </svelte:fragment>
                 </SidebarItem>
-                <SidebarItem label="Portal">
+                <SidebarItem label="Portal" on:click={() => (hidden2 = true)}>
                     <svelte:fragment slot="icon">
                         <LinkOutline
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
