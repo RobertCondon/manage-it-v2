@@ -27,8 +27,12 @@
     };
 </script>
 
-<div class="text-center">
-    <div on:click={() => (hidden2 = false)}><BarsOutline class="w-10 h-10 text-accentForeground"></BarsOutline></div>
+<div class="text-center" style="width: 100%; padding-top: 2rem">
+    <div class="flex justify-between" >
+        <div on:click={() => (hidden2 = false)}><BarsOutline class="w-10 h-10 text-accentForeground"></BarsOutline></div>
+
+        <img src="../manageit-logo.png" alt="ManageIt Logo" width="180" height="64" />
+    </div>
 </div>
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden2} id="sidebar2">
     <div class="flex items-center">
