@@ -27,7 +27,7 @@
                         </a>
                     </div>
                 </div>
-                <img src="/home/home-banner.png" width="550" height="550" alt="Hero" class="mx-auto max-w-[50%] overflow-hidden rounded-xl object-cover sm:w-full lg:order-last " />
+                <img src="/home/home-banner.png" width="550" height="550" alt="Hero" class="mx-auto max-w-[50%] overflow-hidden rounded-xl object-cover sm:w-full lg:order-last hidden md:block" />
             </div>
             <img src="/home/logo-diced.png" alt="Diced" class="absolute right-0 -z-10" />
         </section>
