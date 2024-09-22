@@ -19,10 +19,10 @@
                         Manage IT is a leading provider of comprehensive computer networking services, helping businesses of all sizes optimize their IT infrastructure and achieve their goals.
                     </p>
                     <div class="flex gap-2">
-                        <a href="#" class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                        <a href="/contact" class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                             Get a Quote
                         </a>
-                        <a href="#" class="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                        <a href="/services/endpoint-management" class="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                             Learn More
                         </a>
                     </div>
@@ -90,16 +90,16 @@
                     <div class="flex justify-center align-middle">
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 max-w-2xl">
                             <a
-                                    href="#"
+                                    href="/services/cloud-migration"
                                     class="inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                             >
-                                Service Level Agreements
+                                Cloud Migration
                             </a>
                             <a
-                                    href="#"
+                                    href="/services/endpoint-management"
                                     class="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                             >
-                                Office 365
+                                Endpoint Management
                             </a>
                         </div>
                     </div>

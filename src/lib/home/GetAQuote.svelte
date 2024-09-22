@@ -2,11 +2,19 @@
     import { onMount } from 'svelte';
 
     let showAdditionalFields = false;
+    let sentEmail = false;
     let emailInput = '';
 
     function handleEmailInput(event) {
         emailInput = event.target.value.trim();
         showAdditionalFields = emailInput !== '';
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log('Email:', emailInput);
+        alert('Would send email here from ' + emailInput);
+        sentEmail = true;
     }
 </script>
 
@@ -47,17 +55,24 @@
                     Contact us today to learn how Manage IT can help your business optimize its IT infrastructure and achieve its goals.
                 </p>
             </div>
-            <form class="space-y-4">
-                <div class="flex items-center gap-2">
-                    <input type="email" placeholder="Enter your email" class="input flex-1" on:input={handleEmailInput} />
-                    <button type="submit" class="button">Get a Quote</button>
+            {#if sentEmail}
+                <div class="space-y-2 bg-white flex rounded-lg p-1 flex-col">
+                    <p class="text-xl font-bold">Thank you for your interest!</p>
+                    <p class="text-muted-foreground">We'll be in touch shortly to discuss your needs.</p>
                 </div>
-                {#if showAdditionalFields}
-                    <div class="space-y-2">
-                        <textarea placeholder="Tell us more about your needs" class="textarea min-h-[100px]"></textarea>
+            {:else}
+                <form class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <input type="email" placeholder="Enter your email" class="input flex-1" on:input={handleEmailInput} />
+                        <button type="submit" class="button" on:click={handleSubmit}>Get a Quote</button>
                     </div>
-                {/if}
-            </form>
+                    {#if showAdditionalFields}
+                        <div class="space-y-2">
+                            <textarea placeholder="Tell us more about your needs" class="textarea min-h-[100px]"></textarea>
+                        </div>
+                    {/if}
+                </form>
+            {/if}
         </div>
     </div>
 </section>

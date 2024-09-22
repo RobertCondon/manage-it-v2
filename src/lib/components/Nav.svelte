@@ -15,12 +15,12 @@
             "description": "We do it all! From networking to cloud migration, we have you covered.",
             "icon": LifeSaverOutline
         },
-        "Networking": {
-            "description": "We handle your internet and computer connections. Our team regularly checks and maintains your Wi-Fi routers and network devices to ensure everything works smoothly. We also save important settings and data to help you recover quickly if something goes wrong.",
+        "Cloud Backups": {
+            "description": "Protect your critical business data with our comprehensive cloud backup services. From daily backups to disaster recovery, we've got you covered.",
             "icon": MailBoxOutline
         },
-        "Office 365": {
-            "description": "Managed Office 365 gives you access to Microsoft programs like Word, Excel, and Outlook online. This means you always have the latest versions. It also includes professional email services and daily backups to keep your data safe.",
+        "Endpoint Management": {
+            "description": "Keep your IT infrastructure running smoothly with our all-inclusive End Point Management services, covering everything from remote monitoring to proactive device support",
             "icon": ChartLineUpOutline
         },
         "IT Support": {
@@ -125,7 +125,7 @@
 
     .dropdown .grid {
         display: grid;
-        grid-template-columns: 200px 1fr;
+        grid-template-columns: 240px 1fr;
         gap: 1rem;
     }
 
@@ -216,19 +216,19 @@
             <div class="dropdown {showServices ? 'show' : ''}">
                 <div class="grid">
                     <div class="link-group">
-                        <a href="/services/networking" class="dropdown-link {service === 'Networking' ? 'active' : ''}" on:mouseenter={() => setService('Networking')}>
-                            <ArrowRightOutline class="arrow {service === 'Networking' ? 'show' : 'hidden'}" />
-                            <span>Networking</span>
+                        <a href="/services/cloud-backup" class="dropdown-link {service === 'Cloud Backups' ? 'active' : ''}" on:click={toggleServices} on:mouseenter={() => setService('Cloud Backups')}>
+                            <ArrowRightOutline class="arrow {service === 'Cloud Backups' ? 'show' : 'hidden'}" />
+                            <span>Cloud Backups</span>
                         </a>
-                        <a href="/services/office365" class="dropdown-link {service === 'Office 365' ? 'active' : ''}" on:mouseenter={() => setService('Office 365')}>
-                            <ArrowRightOutline class="arrow w-7 {service === 'Office 365' ? 'show' : 'hidden'}" />
-                            <span>Office 365</span>
+                        <a href="/services/endpoint-management" class="dropdown-link {service === 'Endpoint Management' ? 'active' : ''}" on:click={toggleServices} on:mouseenter={() => setService('Endpoint Management')}>
+                            <ArrowRightOutline class="arrow w-7 {service === 'Endpoint Management' ? 'show' : 'hidden'}" />
+                            <span>Endpoint Management</span>
                         </a>
-                        <a href="/services/it-support" class="dropdown-link {service === 'IT Support' ? 'active' : ''}" on:mouseenter={() => setService('IT Support')}>
+                        <a href="/services/it-support" class="dropdown-link {service === 'IT Support' ? 'active' : ''}" on:click={toggleServices} on:mouseenter={() => setService('IT Support')}>
                             <ArrowRightOutline class="arrow {service === 'IT Support' ? 'show' : 'hidden'}" />
                             <span>IT Support</span>
                         </a>
-                        <a href="/services/cloud-migration" class="dropdown-link {service === 'Cloud Migration' ? 'active' : ''}" on:mouseenter={() => setService('Cloud Migration')}>
+                        <a href="/services/cloud-migration" class="dropdown-link {service === 'Cloud Migration' ? 'active' : ''}" on:click={toggleServices} on:mouseenter={() => setService('Cloud Migration')}>
                             <ArrowRightOutline class="arrow {service === 'Cloud Migration' ? 'show' : 'hidden'}" />
                             <span>Cloud Migration</span>
                         </a>
@@ -238,14 +238,13 @@
                             <svelte:component this={services[service].icon} class="text-accentForeground absolute w-40 h-40 top -left-1 opacity-5"></svelte:component>
                             <h3>{service}</h3>
                             <p>{services[service].description}</p>
-                            <a href="#" class="learn-more">Learn more</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="#" class="nav-link">About</a>
-        <a href="#" class="nav-link">Contact</a>
+        <a href="/about-us" class="nav-link">About</a>
+        <a href="/contact" class="nav-link">Contact</a>
         <a href="#" class="portal-link">Portal</a>
     </div>
 </nav>

@@ -50,18 +50,18 @@
                         <DesktopPcOutline
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
                     </svelte:fragment>
-                    <SidebarDropdownItem href="/services/networking" on:click={() => (hidden2 = true)} label="Networking"/>
-                    <SidebarDropdownItem href="/services/office365" on:click={() => (hidden2 = true)} label="Office 365"/>
+                    <SidebarDropdownItem href="/services/cloud-backup" on:click={() => (hidden2 = true)} label="Cloud Backups"/>
+                    <SidebarDropdownItem href="/services/endpoint-management" on:click={() => (hidden2 = true)} label="Office 365"/>
                     <SidebarDropdownItem href="/services/it-support" on:click={() => (hidden2 = true)} label="IT Support"/>
                     <SidebarDropdownItem href="/services/cloud-migration" on:click={() => (hidden2 = true)} label="Cloud Migration"/>
                 </SidebarDropdownWrapper>
-                <SidebarItem label="About" on:click={() => (hidden2 = true)}>
+                <SidebarItem href="/about-us" label="About" on:click={() => (hidden2 = true)}>
                     <svelte:fragment slot="icon">
                         <UsersGroupOutline
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
                     </svelte:fragment>
                 </SidebarItem>
-                <SidebarItem label="Contact" on:click={() => (hidden2 = true)}>
+                <SidebarItem href="/contact" label="Contact" on:click={() => (hidden2 = true)}>
                     <svelte:fragment slot="icon">
                         <EnvelopeOpenOutline
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
