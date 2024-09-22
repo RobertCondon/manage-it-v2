@@ -33,7 +33,7 @@
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden2} id="sidebar2">
     <div class="flex items-center">
         <h5 id="drawer-navigation-label-3" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-            Menu</h5>
+            Manage It</h5>
         <CloseButton on:click={() => (hidden2 = true)} class="mb-4 dark:text-white"/>
     </div>
     <Sidebar>
@@ -51,7 +51,7 @@
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
                     </svelte:fragment>
                     <SidebarDropdownItem href="/services/cloud-backup" on:click={() => (hidden2 = true)} label="Cloud Backups"/>
-                    <SidebarDropdownItem href="/services/endpoint-management" on:click={() => (hidden2 = true)} label="Office 365"/>
+                    <SidebarDropdownItem href="/services/endpoint-management" on:click={() => (hidden2 = true)} label="Endpoint Management"/>
                     <SidebarDropdownItem href="/services/it-support" on:click={() => (hidden2 = true)} label="IT Support"/>
                     <SidebarDropdownItem href="/services/cloud-migration" on:click={() => (hidden2 = true)} label="Cloud Migration"/>
                 </SidebarDropdownWrapper>
