@@ -1,4 +1,5 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
     import {
         Drawer,
         CloseButton,
@@ -19,12 +20,19 @@
     } from 'flowbite-svelte-icons';
     import {sineIn} from 'svelte/easing';
 
+    const dispatch = createEventDispatcher();
+
     let hidden2 = true;
     let transitionParams = {
         x: -320,
         duration: 200,
         easing: sineIn
     };
+
+    function openPortal() {
+        hidden2 = true; // Close the mobile nav
+        dispatch('openPortal');
+    }
 </script>
 
 <div class="text-center" style="width: 100%; padding-top: 2rem">
@@ -71,7 +79,7 @@
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>
                     </svelte:fragment>
                 </SidebarItem>
-                <SidebarItem label="Portal" on:click={() => (hidden2 = true)}>
+                <SidebarItem label="Portal" on:click={openPortal}>
                     <svelte:fragment slot="icon">
                         <LinkOutline
                                 class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"/>

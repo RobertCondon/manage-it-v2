@@ -3,113 +3,327 @@
     let email = '';
     let message = '';
     let submitted = false;
+    let isSubmitting = false;
+    
+    // Validation state
+    let errors = {
+        name: '',
+        email: '',
+        message: ''
+    };
 
-    function handleSubmit(event) {
+    // Validation functions
+    function validateName() {
+        if (!name.trim()) {
+            errors.name = 'Name is required';
+            return false;
+        }
+        if (name.trim().length < 2) {
+            errors.name = 'Name must be at least 2 characters';
+            return false;
+        }
+        errors.name = '';
+        return true;
+    }
+
+    function validateEmail() {
+        if (!email.trim()) {
+            errors.email = 'Email is required';
+            return false;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.trim())) {
+            errors.email = 'Please enter a valid email address';
+            return false;
+        }
+        errors.email = '';
+        return true;
+    }
+
+    function validateMessage() {
+        if (!message.trim()) {
+            errors.message = 'Message is required';
+            return false;
+        }
+        if (message.trim().length < 10) {
+            errors.message = 'Message must be at least 10 characters';
+            return false;
+        }
+        errors.message = '';
+        return true;
+    }
+
+    function validateAll() {
+        const nameValid = validateName();
+        const emailValid = validateEmail();
+        const messageValid = validateMessage();
+        return nameValid && emailValid && messageValid;
+    }
+
+    async function handleSubmit(event) {
         event.preventDefault();
-        // Implement form submission logic here
+        
+        if (!validateAll()) {
+            return;
+        }
+
+        isSubmitting = true;
+        
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
         console.log('Name:', name);
         console.log('Email:', email);
         console.log('Message:', message);
+        
         submitted = true;
+        isSubmitting = false;
     }
 </script>
 
-<div class="flex flex-col min-h-[100dvh]">
+<div class="flex flex-col min-h-[100dvh] bg-gradient-to-br from-slate-50 to-blue-50">
     <main class="flex-1">
         <!-- Hero Section -->
         <section class="w-full py-12 md:py-24 flex justify-center">
             <div class="container px-4 md:px-6">
                 <div class="space-y-6 text-center">
-                    <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                        Contact Us
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-600 text-white rounded-2xl mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                        Get in <span class="text-blue-600">Touch</span>
                     </h1>
-                    <p class="max-w-[600px] mx-auto text-muted-foreground md:text-xl">
-                        Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.
+                    <p class="max-w-2xl mx-auto text-xl text-gray-600 leading-8">
+                        Ready to transform your IT infrastructure? Let's discuss how we can help your business thrive with our expert solutions.
                     </p>
                 </div>
                 <!-- Contact Form and Address Sections -->
-                <div class="mt-12 flex flex-col md:flex-row align-middle justify-center">
+                <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                     <!-- Contact Form -->
-                    <div class="flex-1 max-w-lg px-8" style="margin-top: 4rem">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 border border-gray-200">
                         {#if submitted}
-                            <div class="space-y-2 bg-white rounded-lg p-4">
-                                <p class="text-xl font-bold">Thank you for contacting us!</p>
-                                <p class="text-muted-foreground">We'll be in touch shortly.</p>
+                            <div class="text-center space-y-4">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Message Sent!</h3>
+                                <p class="text-gray-600">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                                <button 
+                                    on:click={() => { submitted = false; name = ''; email = ''; message = ''; }}
+                                    class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                                >
+                                    Send Another Message
+                                </button>
                             </div>
                         {:else}
-                            <form class="space-y-6" on:submit|preventDefault={handleSubmit}>
-                                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                                    <div class="space-y-2">
-                                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                                        <input
+                            <div class="space-y-6">
+                                <div class="text-center space-y-2">
+                                    <h2 class="text-2xl font-bold text-gray-900">Send us a Message</h2>
+                                    <p class="text-gray-600">Fill out the form below and we'll respond as soon as possible.</p>
+                                </div>
+                                
+                                <form class="space-y-6" on:submit={handleSubmit}>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="space-y-2">
+                                            <label for="name" class="block text-sm font-semibold text-gray-700">Full Name *</label>
+                                            <input
                                                 id="name"
                                                 type="text"
-                                                placeholder="Enter your name"
-                                                class="w-full px-3 py-2 border border-input bg-background rounded-md text-sm shadow-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                                                placeholder="John Doe"
+                                                class="w-full px-4 py-3 border-2 rounded-xl text-sm transition-colors focus:outline-none focus:border-blue-500 {errors.name ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50'}"
                                                 bind:value={name}
-                                        />
-                                    </div>
-                                    <div class="space-y-2">
-                                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                        <input
+                                                on:blur={validateName}
+                                                on:input={() => errors.name && validateName()}
+                                                disabled={isSubmitting}
+                                            />
+                                            {#if errors.name}
+                                                <p class="text-sm text-red-600 flex items-center gap-1">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    {errors.name}
+                                                </p>
+                                            {/if}
+                                        </div>
+                                        
+                                        <div class="space-y-2">
+                                            <label for="email" class="block text-sm font-semibold text-gray-700">Email Address *</label>
+                                            <input
                                                 id="email"
                                                 type="email"
-                                                placeholder="Enter your email"
-                                                class="w-full px-3 py-2 border border-input bg-background rounded-md text-sm shadow-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                                                placeholder="john@example.com"
+                                                class="w-full px-4 py-3 border-2 rounded-xl text-sm transition-colors focus:outline-none focus:border-blue-500 {errors.email ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50'}"
                                                 bind:value={email}
-                                        />
+                                                on:blur={validateEmail}
+                                                on:input={() => errors.email && validateEmail()}
+                                                disabled={isSubmitting}
+                                            />
+                                            {#if errors.email}
+                                                <p class="text-sm text-red-600 flex items-center gap-1">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    {errors.email}
+                                                </p>
+                                            {/if}
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="space-y-2">
-                                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                                    <textarea
+                                    
+                                    <div class="space-y-2">
+                                        <label for="message" class="block text-sm font-semibold text-gray-700">Message *</label>
+                                        <textarea
                                             id="message"
-                                            placeholder="Enter your message"
-                                            class="w-full min-h-[120px] px-3 py-2 border border-input bg-background rounded-md text-sm shadow-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                                            placeholder="Tell us about your project or how we can help you..."
+                                            rows="5"
+                                            class="w-full px-4 py-3 border-2 rounded-xl text-sm resize-none transition-colors focus:outline-none focus:border-blue-500 {errors.message ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50'}"
                                             bind:value={message}
-                                    ></textarea>
-                                </div>
-                                <button
+                                            on:blur={validateMessage}
+                                            on:input={() => errors.message && validateMessage()}
+                                            disabled={isSubmitting}
+                                        ></textarea>
+                                        {#if errors.message}
+                                            <p class="text-sm text-red-600 flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                </svg>
+                                                {errors.message}
+                                            </p>
+                                        {/if}
+                                    </div>
+                                    
+                                    <button
                                         type="submit"
-                                        class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus:outline-none focus:ring-1 focus:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                                >
-                                    Submit
-                                </button>
-                            </form>
+                                        disabled={isSubmitting}
+                                        class="w-full flex items-center justify-center gap-2 py-4 px-6 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold rounded-xl transition-all duration-200 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
+                                    >
+                                        {#if isSubmitting}
+                                            <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                                <path class="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
+                                            Sending...
+                                        {:else}
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                            </svg>
+                                            Send Message
+                                        {/if}
+                                    </button>
+                                </form>
+                            </div>
                         {/if}
                     </div>
-                    <!-- Address Block -->
-                    <div class="flex-1 max-w-md px-8" style="margin-top: 4rem">
-                        <div class="space-y-8">
-                            <div class="space-y-4">
-                                <h2 class="text-2xl font-bold">Our Address</h2>
-                                <div class="space-y-1 text-muted-foreground">
-                                    <p>Unit B1/92 Russley Road</p>
-                                    <p>Russley, Christchurch 8042</p>
+                    <!-- Contact Information -->
+                    <div class="space-y-6">
+                        <!-- Quick Contact Cards -->
+                        <div class="grid gap-6">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex items-center justify-center w-12 h-12 bg-blue-100 text-blue-600 rounded-xl">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Visit Us</h3>
+                                        <p class="text-gray-600">Unit B1/92 Russley Road</p>
+                                        <p class="text-gray-600">Russley, Christchurch 8042</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="space-y-4">
-                                <h2 class="text-2xl font-bold">Phone</h2>
-                                <div class="text-muted-foreground">
-                                    <p>033 810 333</p>
+
+                            <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex items-center justify-center w-12 h-12 bg-green-100 text-green-600 rounded-xl">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Call Us</h3>
+                                        <p class="text-gray-600">033 810 333</p>
+                                        <p class="text-sm text-gray-500">Mon-Fri 9AM-5PM NZST</p>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex items-center justify-center w-12 h-12 bg-purple-100 text-purple-600 rounded-xl">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Response Time</h3>
+                                        <p class="text-gray-600">Within 24 hours</p>
+                                        <p class="text-sm text-gray-500">Emergency support available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Why Choose Us -->
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white">
+                            <h3 class="text-lg font-semibold mb-4">Why Choose Manage IT?</h3>
+                            <ul class="space-y-2 text-blue-100">
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span>Expert IT consultants</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span>24/7 monitoring & support</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span>Tailored solutions</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <!-- Google Maps Embed -->
-                <div class="mt-12 flex justify-center" style="margin-top: 5rem">
-                    <div style="width: 80%">
-                        <iframe
+                <div class="mt-20 max-w-6xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200">
+                        <div class="p-6 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+                            <div class="flex items-center space-x-3">
+                                <div class="flex items-center justify-center w-10 h-10 bg-white/20 rounded-xl">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold">Find Our Office</h3>
+                                    <p class="text-blue-100">Visit us at our Christchurch location</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="aspect-video">
+                            <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11573.80776468875!2d172.5382404!3d-43.5137675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d321fda58eb5c55%3A0x9b014512a73764dd!2sManage%20IT%20Digital%20Ltd!5e0!3m2!1sen!2snz!4v1727007793128!5m2!1sen!2snz"
                                 width="100%"
-                                height="400"
+                                height="100%"
                                 style="border:0;"
                                 allowfullscreen=""
                                 loading="lazy"
-                                title="Google Maps"
+                                title="Google Maps - Manage IT Digital Ltd Location"
                                 referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
+                                class="w-full h-full"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </div>

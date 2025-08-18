@@ -2,92 +2,183 @@
     import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 
-<div class="flex flex-col min-h-dvh">
+<div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">
     <main class="flex-1">
-        <section class="w-full py-12 md:py-24 lg:py-32 px-[10vw]">
-            <div class="container px-4 md:px-6">
-                <div class="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
-                    <div class="space-y-4">
-                        <div class="space-y-2">
-                            <div class="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Cloud Backup Services</div>
-                            <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
-                                Secure and Reliable Cloud Backup Solutions
-                            </h2>
-                            <p class="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <!-- Hero Section -->
+        <section class="relative w-full py-16 md:py-24 lg:py-32 px-[10vw] overflow-hidden">
+            <!-- Background decorative elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-green-200/30 to-emerald-300/20 rounded-full blur-3xl"></div>
+                <div class="absolute top-1/2 -left-20 w-60 h-60 bg-gradient-to-br from-teal-200/20 to-green-300/10 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="container px-4 md:px-6 relative z-10">
+                <div class="grid items-center gap-8 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <!-- Service Badge -->
+                            <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 text-sm font-medium">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 17a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zM3 7a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7zM4 2a1 1 0 00-1 1v2a1 1 0 001 1h12a1 1 0 001-1V3a1 1 0 00-1-1H4z"/>
+                                </svg>
+                                Cloud Backup Services
+                            </div>
+                            
+                            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl">
+                                Secure and <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600">Reliable</span><br>
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-green-600 to-emerald-600">Cloud Backup</span> Solutions
+                            </h1>
+                            
+                            <p class="max-w-2xl text-gray-700 text-lg md:text-xl leading-relaxed">
                                 Protect your critical business data with our comprehensive cloud backup services. From daily backups to disaster recovery, we've got you covered.
                             </p>
                         </div>
-                        <ul class="grid gap-2 py-4">
-                            <li>
-                                <CheckOutline class="mr-2 inline-block h-4 w-4" />
-                                Daily backups for Microsoft 365, Google Workplace, and critical business data.
-                            </li>
-                            <li>
-                                <CheckOutline class="mr-2 inline-block h-4 w-4" />
-                                Regular recoverability testing to ensure data integrity.
-                            </li>
-                            <li>
-                                <CheckOutline class="mr-2 inline-block h-4 w-4" />
-                                Flexible storage options to suit your business needs.
-                            </li>
-                        </ul>
+                        
+                        <!-- Key Benefits -->
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-1">
+                                    <CheckOutline class="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Daily Backups</h3>
+                                    <p class="text-gray-600">Daily backups for Microsoft 365, Google Workplace, and critical business data.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mt-1">
+                                    <CheckOutline class="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Data Integrity Testing</h3>
+                                    <p class="text-gray-600">Regular recoverability testing to ensure data integrity.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-teal-500 to-green-600 rounded-full flex items-center justify-center mt-1">
+                                    <CheckOutline class="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Flexible Storage</h3>
+                                    <p class="text-gray-600">Flexible storage options to suit your business needs.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <img
-                            src="../services/networking.png"
+                    
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-200/20 to-emerald-300/20 rounded-3xl blur-2xl transform rotate-6"></div>
+                        <img
+                            src="../services/networking.svg"
                             width="550"
                             height="310"
                             alt="Cloud Backup"
-                            class="mx-auto overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-                    />
+                            class="relative mx-auto overflow-hidden rounded-3xl object-cover object-center sm:w-full lg:order-last shadow-2xl border border-green-100/50"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="w-full py-12 md:py-24 lg:py-32 bg-muted px-[10vw]">
+        <!-- Services Section -->
+        <section class="relative w-full py-16 md:py-24 lg:py-32 px-[10vw] bg-white">
             <div class="container px-4 md:px-6">
-                <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
-                    <div class="space-y-4">
-                        <div class="space-y-2">
-                            <div>
-                                <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
-                                    Comprehensive Cloud Backup Solutions
-                                </h2>
-                                <p class="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                    From configuration to recovery, our cloud backup solutions are designed to keep your data secure and accessible.
-                                </p>
-                            </div>
-                            <div class="flex justify-center mt-10">
-                                <img
-                                        src="../services/networking-secondary.svg"
-                                        alt="Networking"
-                                        class="w-80 overflow-hidden "
-                                />
-                            </div>
+                <!-- Section Header -->
+                <div class="text-center space-y-4 mb-16">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 text-sm font-medium">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Our Backup Solutions
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                        Comprehensive <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">Cloud Backup</span> Solutions
+                    </h2>
+                    <p class="max-w-3xl mx-auto text-gray-600 text-lg">
+                        From configuration to recovery, our cloud backup solutions are designed to keep your data secure and accessible.
+                    </p>
+                </div>
+                
+                <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+                    <div class="relative order-2 lg:order-1">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-200/30 to-emerald-300/30 rounded-3xl blur-2xl transform -rotate-3"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-green-100/50">
+                            <img
+                                src="../services/networking-secondary.svg"
+                                alt="Networking"
+                                class="w-full h-64 object-contain"
+                            />
                         </div>
                     </div>
-                    <div class="grid gap-6">
-                        <div class="grid gap-1">
-                            <h3 class="text-lg font-bold">Microsoft 365 & Google Workplace Backup</h3>
-                            <p class="text-muted-foreground">
-                                Our cloud backup services include daily backups for your Microsoft 365 and Google Workplace environments, ensuring your emails, contacts, calendars, and documents are always protected.
-                            </p>
+                    
+                    <div class="space-y-8 order-1 lg:order-2">
+                        <!-- Microsoft 365 & Google Workplace Backup -->
+                        <div class="group relative bg-gradient-to-br from-white to-green-50/30 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-green-100/50">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors">Microsoft 365 & Google Workplace Backup</h3>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Our cloud backup services include daily backups for your Microsoft 365 and Google Workplace environments, ensuring your emails, contacts, calendars, and documents are always protected.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="grid gap-1">
-                            <h3 class="text-lg font-bold">Flat File Backup</h3>
-                            <p class="text-muted-foreground">
-                                We offer daily backups for critical business data stored on servers, workstations, and laptops, with regular testing to ensure data integrity and recoverability.
-                            </p>
+                        
+                        <!-- Flat File Backup -->
+                        <div class="group relative bg-gradient-to-br from-white to-emerald-50/30 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-emerald-100/50">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">Flat File Backup</h3>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        We offer daily backups for critical business data stored on servers, workstations, and laptops, with regular testing to ensure data integrity and recoverability.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="grid gap-1">
-                            <h3 class="text-lg font-bold">Disaster Recovery Plan</h3>
-                            <p class="text-muted-foreground">
-                                Our customized disaster recovery plans provide a fully functional recovery point for your network core services, regularly tested to ensure readiness in case of an emergency.
-                            </p>
+                        
+                        <!-- Disaster Recovery Plan -->
+                        <div class="group relative bg-gradient-to-br from-white to-teal-50/30 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-teal-100/50">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-teal-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-700 transition-colors">Disaster Recovery Plan</h3>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Our customized disaster recovery plans provide a fully functional recovery point for your network core services, regularly tested to ensure readiness in case of an emergency.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="grid gap-1">
-                            <h3 class="text-lg font-bold">Scalable Storage</h3>
-                            <p class="text-muted-foreground">
-                                We offer flexible storage options, with pooled storage available per license and additional cloud storage units available as needed, ensuring your data is always backed up and accessible.
-                            </p>
+                        
+                        <!-- Scalable Storage -->
+                        <div class="group relative bg-gradient-to-br from-white to-green-50/30 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-green-100/50">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-700 transition-colors">Scalable Storage</h3>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        We offer flexible storage options, with pooled storage available per license and additional cloud storage units available as needed, ensuring your data is always backed up and accessible.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

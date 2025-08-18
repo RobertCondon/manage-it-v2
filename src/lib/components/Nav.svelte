@@ -1,4 +1,5 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
     import {
         ArrowRightOutline,
         LifeSaverOutline,
@@ -7,6 +8,8 @@
         CloudArrowUpOutline,
         DesktopPcOutline,
     } from 'flowbite-svelte-icons';
+
+    const dispatch = createEventDispatcher();
 
     let showServices = false;
     let service = "Services";
@@ -39,6 +42,10 @@
 
     function setService(serviceName) {
         service = serviceName;
+    }
+
+    function openPortal() {
+        dispatch('openPortal');
     }
 </script>
 
@@ -245,6 +252,6 @@
         </div>
         <a href="/about-us" class="nav-link">About</a>
         <a href="/contact" class="nav-link">Contact</a>
-        <a href="#" class="portal-link">Portal</a>
+        <button on:click={openPortal} class="portal-link">Portal</button>
     </div>
 </nav>

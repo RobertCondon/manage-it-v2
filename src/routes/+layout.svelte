@@ -2,12 +2,22 @@
     import "../app.css";
     import MobileNav from "$lib/components/MobileNav.svelte";
     import Nav from "$lib/components/Nav.svelte";
+    import PortalModal from "$lib/components/PortalModal.svelte";
     import {onMount} from "svelte";
 
     let isMobile = false;
+    let showPortalModal = false;
 
     function updateIsMobile() {
         isMobile = window.innerWidth < 768;
+    }
+
+    function openPortalModal() {
+        showPortalModal = true;
+    }
+
+    function closePortalModal() {
+        showPortalModal = false;
     }
 
     onMount(() => {
@@ -19,15 +29,18 @@
 
 <header class="px-4 lg:px-6 h-14 flex items-center">
     {#if isMobile}
-        <MobileNav />
+        <MobileNav on:openPortal={openPortalModal} />
     {:else}
-        <Nav />
+        <Nav on:openPortal={openPortalModal} />
     {/if}
 </header>
 
 <main>
     <slot></slot>
 </main>
+
+<!-- Portal Modal -->
+<PortalModal isOpen={showPortalModal} on:close={closePortalModal} />
 
 <footer>
     <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
