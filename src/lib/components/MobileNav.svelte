@@ -37,7 +37,13 @@
 
 <div class="text-center" style="width: 100%; padding-top: 2rem">
     <div class="flex justify-between" >
-        <div on:click={() => (hidden2 = false)}><BarsOutline class="w-10 h-10 text-accentForeground"></BarsOutline></div>
+        <button 
+            on:click={() => (hidden2 = false)}
+            aria-label="Open navigation menu"
+            class="p-1 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500"
+        >
+            <BarsOutline class="w-10 h-10 text-accentForeground"></BarsOutline>
+        </button>
 
         <img src="../manageit-logo.png" alt="ManageIt Logo" width="180" height="64" />
     </div>

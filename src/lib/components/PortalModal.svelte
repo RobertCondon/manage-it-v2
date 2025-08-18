@@ -83,12 +83,17 @@
     <!-- Modal backdrop -->
     <div 
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
-        on:click={handleBackdropClick}
-        on:keydown={handleKeydown}
         role="dialog"
         aria-modal="true"
         aria-labelledby="portal-modal-title"
     >
+        <!-- Backdrop click handler -->
+        <button 
+            class="absolute inset-0 w-full h-full cursor-default"
+            on:click={handleBackdropClick}
+            aria-label="Close modal"
+            tabindex="-1"
+        ></button>
         <!-- Modal content -->
         <div class="relative w-full max-w-4xl max-h-[90vh] overflow-auto bg-white rounded-3xl shadow-2xl border border-gray-100 animate-modal-in">
             <!-- Modal header -->

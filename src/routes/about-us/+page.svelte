@@ -2,6 +2,43 @@
     import { BriefcaseOutline, LightbulbOutline, UsersGroupOutline, StarOutline } from "flowbite-svelte-icons";
 </script>
 
+<svelte:head>
+    <title>About ManageIT - 20+ Years of IT Excellence in New Zealand</title>
+    <meta name="description" content="Learn about ManageIT's 20+ years of IT expertise in New Zealand. Founded in 2004 by Tony Condon, we provide personalized IT solutions with 24/7 support for 100+ happy clients." />
+    <meta name="keywords" content="about ManageIT, Tony Condon, IT company history, New Zealand IT services, managed service provider, IT expertise" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="About ManageIT - 20+ Years of IT Excellence in New Zealand" />
+    <meta property="og:description" content="Learn about ManageIT's 20+ years of IT expertise in New Zealand. Founded in 2004 by Tony Condon, we provide personalized IT solutions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manageit.nz/about-us" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "ManageIT",
+            "foundingDate": "2004-04-02",
+            "founder": {
+                "@type": "Person",
+                "name": "Tony Condon",
+                "jobTitle": "Founder & IT Director"
+            },
+            "description": "ManageIT was established on April 2, 2004, and has since grown to become a trusted provider of IT solutions.",
+            "numberOfEmployees": "20+",
+            "yearlyRevenue": {
+                "@type": "QuantitativeValue",
+                "value": "100+",
+                "unitText": "clients served"
+            }
+        }
+    }
+    </script>
+</svelte:head>
+
 <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">
     <!-- Hero Section -->
     <section class="relative w-full py-16 md:py-24 lg:py-32 px-[10vw] overflow-hidden">

@@ -39,15 +39,26 @@ test.describe('Portal Modal', () => {
     await expect(page.locator('text=Download and install monitoring agent')).toBeVisible();
   });
 
-  test('service links open in new tab and point to google.com', async ({ page }) => {
+  test('service links open in new tab and point to correct URLs', async ({ page }) => {
     // Open portal modal
     await page.click('button:has-text("Portal")');
     
-    // Check that first service link has correct attributes
-    const remoteAccessLink = page.locator('a:has-text("Remote Access")');
-    await expect(remoteAccessLink).toHaveAttribute('href', 'https://google.com');
-    await expect(remoteAccessLink).toHaveAttribute('target', '_blank');
-    await expect(remoteAccessLink).toHaveAttribute('rel', 'noopener noreferrer');
+    // Check all service links have correct attributes and URLs
+    const serviceLinks = [
+      { name: 'Remote Access', url: 'https://manage-it.screenconnect.com/' },
+      { name: 'Ticket Management', url: 'https://aus.myconnectwise.net/support/index.htm?Company=Manag31t' },
+      { name: 'Office 365 Emails', url: 'https://outlook.office365.com/' },
+      { name: 'Office 365 Portal', url: 'https://portal.office365.com/' },
+      { name: 'FortiClient SSL VPN', url: 'https://www.fortinet.com/products/endpoint-security/forticlient' },
+      { name: 'Labtech Agent Install', url: 'https://labtech.manageit.nz/WCC2/Home/Login?ReturnUrl=%2fWCC2%2f' }
+    ];
+
+    for (const service of serviceLinks) {
+      const serviceLink = page.locator(`a:has-text("${service.name}")`);
+      await expect(serviceLink).toHaveAttribute('href', service.url);
+      await expect(serviceLink).toHaveAttribute('target', '_blank');
+      await expect(serviceLink).toHaveAttribute('rel', 'noopener noreferrer');
+    }
   });
 
   test('closes modal when X button is clicked', async ({ page }) => {

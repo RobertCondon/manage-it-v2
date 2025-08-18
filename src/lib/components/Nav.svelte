@@ -219,7 +219,15 @@
 
     <div class="links">
         <div class="relative">
-            <a href="#" class="nav-link {showServices ? 'active-services-button' : ''}" on:click|preventDefault={toggleServices}>Services</a>
+            <button 
+                class="nav-link {showServices ? 'active-services-button' : ''}" 
+                on:click={toggleServices}
+                aria-expanded={showServices}
+                aria-haspopup="true"
+                aria-label="Services menu"
+            >
+                Services
+            </button>
             <div class="dropdown {showServices ? 'show' : ''}">
                 <div class="grid">
                     <div class="link-group">

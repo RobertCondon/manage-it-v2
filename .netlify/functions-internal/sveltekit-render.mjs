@@ -9,10 +9,10 @@ function __memo(fn) {
 return {
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set([".DS_Store","about-us/main.svg","favicon.png","home/experts.png","home/home-banner.png","home/logo-diced.png","manageit-logo.png","services/cloud-migration-secondary.svg","services/cloud-migration.svg","services/endpoint-management.png","services/endpoint-management.svg","services/endpoint-secondary.svg","services/it-support-secondary.svg","services/it-support.png","services/it-support.svg","services/networking-secondary.svg","services/networking.png","services/networking.svg","testimonials/ShantyTown.jpg","testimonials/WindowTreatments.jpg","testimonials/bond-refund-form.pdf"]),
-	mimeTypes: {".svg":"image/svg+xml",".png":"image/png",".jpg":"image/jpeg",".pdf":"application/pdf"},
+	assets: new Set([".DS_Store","about-us/main.svg","favicon.png","home/experts.png","home/home-banner.png","home/logo-diced.png","manageit-logo.png","robots.txt","services/cloud-migration-secondary.svg","services/cloud-migration.svg","services/endpoint-management.png","services/endpoint-management.svg","services/endpoint-secondary.svg","services/it-support-secondary.svg","services/it-support.png","services/it-support.svg","services/networking-secondary.svg","services/networking.png","services/networking.svg","sitemap.xml","sw.js","testimonials/ShantyTown.jpg","testimonials/WindowTreatments.jpg","testimonials/bond-refund-form.pdf"]),
+	mimeTypes: {".svg":"image/svg+xml",".png":"image/png",".txt":"text/plain",".xml":"text/xml",".js":"text/javascript",".jpg":"image/jpeg",".pdf":"application/pdf"},
 	_: {
-		client: {start:"_app/immutable/entry/start.rnUp_ETR.js",app:"_app/immutable/entry/app.DMbkJZuj.js",imports:["_app/immutable/entry/start.rnUp_ETR.js","_app/immutable/chunks/CMpBpgJn.js","_app/immutable/chunks/DfNoZIRX.js","_app/immutable/chunks/6h4iDT5m.js","_app/immutable/entry/app.DMbkJZuj.js","_app/immutable/chunks/DfNoZIRX.js","_app/immutable/chunks/IHki7fMi.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.DesD8GJ-.js",app:"_app/immutable/entry/app.Ygp40gAz.js",imports:["_app/immutable/entry/start.DesD8GJ-.js","_app/immutable/chunks/f0bj1gry.js","_app/immutable/chunks/DxhZTZ8C.js","_app/immutable/chunks/CtmFNguk.js","_app/immutable/entry/app.Ygp40gAz.js","_app/immutable/chunks/DxhZTZ8C.js","_app/immutable/chunks/DrSjkpCF.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('../server/nodes/0.js')),
 			__memo(() => import('../server/nodes/1.js')),

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://manageit.nz/sitemap.xml
+
+# Block access to admin/development files
+Disallow: /_app/
+Disallow: /sw.js

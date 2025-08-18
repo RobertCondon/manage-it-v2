@@ -13,7 +13,7 @@
     "file": "chunks/CheckOutline.js",
     "name": "CheckOutline",
     "imports": [
-      "_ssr.js"
+      "_vendor.js"
     ]
   },
   "_environment.js": {
@@ -28,8 +28,7 @@
     "file": "chunks/internal.js",
     "name": "internal",
     "imports": [
-      "_ssr.js",
-      "_ssr2.js",
+      "_vendor.js",
       "_environment.js"
     ]
   },
@@ -40,17 +39,13 @@
       "_utils.js"
     ]
   },
-  "_ssr.js": {
-    "file": "chunks/ssr.js",
-    "name": "ssr"
-  },
-  "_ssr2.js": {
-    "file": "chunks/ssr2.js",
-    "name": "ssr"
-  },
   "_utils.js": {
     "file": "chunks/utils.js",
     "name": "utils"
+  },
+  "_vendor.js": {
+    "file": "chunks/vendor.js",
+    "name": "vendor"
   },
   "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
     "file": "remote-entry.js",
@@ -68,10 +63,9 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-4/error.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
+      "_vendor.js",
       "_exports.js",
-      "_utils.js",
-      "_ssr2.js"
+      "_utils.js"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
@@ -84,7 +78,7 @@
       "_environment.js",
       "_exports.js",
       "_utils.js",
-      "_ssr.js",
+      "_vendor.js",
       "_internal.js"
     ]
   },
@@ -94,10 +88,10 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_vendor.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DBUQ2iig.css"
+      "_app/immutable/assets/_layout.D8hJvC77.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -106,7 +100,7 @@
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_vendor.js"
     ],
     "css": [
       "_app/immutable/assets/_page.D9pMFkCf.css"
@@ -118,7 +112,7 @@
     "src": "src/routes/about-us/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_vendor.js"
     ]
   },
   "src/routes/contact/+page.svelte": {
@@ -127,7 +121,7 @@
     "src": "src/routes/contact/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_vendor.js"
     ]
   },
   "src/routes/services/cloud-backup/+page.svelte": {
@@ -136,7 +130,7 @@
     "src": "src/routes/services/cloud-backup/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
+      "_vendor.js",
       "_CheckOutline.js"
     ]
   },
@@ -146,7 +140,7 @@
     "src": "src/routes/services/cloud-migration/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
+      "_vendor.js",
       "_CheckOutline.js"
     ]
   },
@@ -156,7 +150,7 @@
     "src": "src/routes/services/endpoint-management/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
+      "_vendor.js",
       "_CheckOutline.js"
     ]
   },
@@ -166,7 +160,7 @@
     "src": "src/routes/services/it-support/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
+      "_vendor.js",
       "_CheckOutline.js"
     ]
   }
