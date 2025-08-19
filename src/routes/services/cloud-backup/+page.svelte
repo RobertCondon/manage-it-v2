@@ -12,6 +12,13 @@
                 <div class="absolute top-1/2 -left-20 w-60 h-60 bg-gradient-to-br from-teal-200/20 to-green-300/10 rounded-full blur-3xl"></div>
             </div>
             
+            <!-- Logo Background -->
+            <img 
+                src="/home/logo-diced.png" 
+                alt="ManageIT logo decorative element" 
+                class="absolute right-0 top-0 w-1/3 h-full object-cover opacity-30 z-0" 
+            />
+            
             <div class="container px-4 md:px-6 relative z-10">
                 <div class="grid items-center gap-8 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
                     <div class="space-y-6">

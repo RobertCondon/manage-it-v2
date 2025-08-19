@@ -69,15 +69,34 @@
 
         isSubmitting = true;
         
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        console.log('Name:', name);
-        console.log('Email:', email);
-        console.log('Message:', message);
-        
-        submitted = true;
-        isSubmitting = false;
+        try {
+            // Send email via Netlify function
+            const response = await fetch('/.netlify/functions/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email.trim(),
+                    name: name.trim(),
+                    message: message.trim(),
+                    formType: 'contact'
+                })
+            });
+            
+            const result = await response.json();
+            
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to send email');
+            }
+            
+            submitted = true;
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('There was an error sending your message. Please try again or contact us directly at info@manageit.nz');
+        } finally {
+            isSubmitting = false;
+        }
     }
 </script>
 

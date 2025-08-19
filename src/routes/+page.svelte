@@ -94,8 +94,8 @@
 
 <div class="flex flex-col min-h-[100dvh]">
     <main class="flex-1">
-        <section class="w-full py-12 md:py-24 flex justify-center">
-            <div class="container px-4 md:px-6 flex flex-row-reverse gap-8 lg:grid-cols-2 lg:gap-16">
+        <section class="w-full py-12 md:py-24 flex justify-center relative">
+            <div class="container px-4 md:px-6 flex flex-row-reverse gap-8 lg:grid-cols-2 lg:gap-16 relative z-10">
                 <div class="space-y-4">
                     <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                         Reliable IT Solutions for Your Business
@@ -104,10 +104,10 @@
                         Manage IT is a leading provider of comprehensive computer networking services, helping businesses of all sizes optimize their IT infrastructure and achieve their goals.
                     </p>
                     <div class="flex gap-2">
-                        <a href="/contact" class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                        <a href="/contact" class="inline-flex h-10 items-center justify-center rounded-md bg-green-600 hover:bg-green-700 px-8 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
                             Get a Quote
                         </a>
-                        <a href="/services/endpoint-management" class="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                        <a href="/services/endpoint-management" class="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
                             Learn More
                         </a>
                     </div>
@@ -123,7 +123,11 @@
                     fetchpriority="high"
                 />
             </div>
-            <img src="/home/logo-diced.png" width="200" height="200" alt="ManageIT logo decorative element" class="absolute right-0 -z-10" />
+            <img 
+                src="/home/logo-diced.png" 
+                alt="ManageIT logo decorative element" 
+                class="absolute right-0 top-0 w-1/3 h-full object-cover opacity-30 -z-10" 
+            />
         </section>
         <section class="w-full py-12 md:py-24 lg:py-32 bg-muted flex justify-center">
             <div class="container px-4 md:px-6">
@@ -195,13 +199,13 @@
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 max-w-2xl">
                             <a
                                     href="/services/cloud-migration"
-                                    class="inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                                    class="inline-flex h-12 items-center justify-center rounded-md bg-green-600 hover:bg-green-700 px-6 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                             >
                                 Cloud Migration
                             </a>
                             <a
                                     href="/services/endpoint-management"
-                                    class="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                                    class="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                             >
                                 Endpoint Management
                             </a>
