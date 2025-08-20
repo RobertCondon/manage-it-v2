@@ -24,15 +24,13 @@
         updateIsMobile();
         window.addEventListener('resize', updateIsMobile);
         
-        // Register service worker for caching
+        // Unregister any existing service workers to prevent errors
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then((registration) => {
-                    console.log('SW registered successfully');
-                })
-                .catch((error) => {
-                    console.log('SW registration failed');
-                });
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                    registration.unregister();
+                }
+            });
         }
         
         return () => window.removeEventListener('resize', updateIsMobile);
