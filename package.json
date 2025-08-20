@@ -10,9 +10,11 @@
 		"test:ui": "playwright test --ui",
 		"build:test": "npm run build && npm run test",
 		"build:check": "svelte-check && npm run build",
+		"build:validate": "npm run build && node scripts/validate-build.js",
 		"lint": "eslint . --ext .js,.ts,.svelte",
 		"format": "prettier --write .",
 		"validate": "npm run build:check && npm run test",
+		"test:deployment": "playwright test deployment-check.spec.js",
 		"prepare": "husky install"
 	},
 	"devDependencies": {
