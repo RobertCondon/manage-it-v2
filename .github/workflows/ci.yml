@@ -1,0 +1,62 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run build test
+      run: npm run build
+      env:
+        # Mock environment variables for build testing
+        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY || 'mock-key-for-testing' }}
+        TO_EMAIL: ${{ secrets.TO_EMAIL || 'test@example.com' }}
+        FROM_EMAIL: ${{ secrets.FROM_EMAIL || 'noreply@example.com' }}
+    
+    - name: Run Playwright tests
+      run: npm run test
+      env:
+        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY || 'mock-key-for-testing' }}
+        TO_EMAIL: ${{ secrets.TO_EMAIL || 'test@example.com' }}
+        FROM_EMAIL: ${{ secrets.FROM_EMAIL || 'noreply@example.com' }}
+    
+    - name: Check for build artifacts
+      run: |
+        if [ ! -d "build" ]; then
+          echo "Build directory not found!"
+          exit 1
+        fi
+        if [ ! -f "build/index.html" ]; then
+          echo "Main index.html not found in build!"
+          exit 1
+        fi
+        echo "Build artifacts verified successfully!"
+    
+    - name: Bundle size check
+      run: |
+        # Check that the main bundle isn't too large (adjust threshold as needed)
+        find build -name "*.js" -type f -exec du -k {} + | awk '{sum+=$1} END {
+          print "Total JS bundle size: " sum "KB"
+          if(sum > 1000) {
+            print "Warning: Bundle size exceeds 1MB"
+            exit 1
+          }
+        }'

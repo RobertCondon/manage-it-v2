@@ -10,7 +10,7 @@ return {
 	assets: new Set([".DS_Store","about-us/main.svg","favicon.png","home/experts.png","home/home-banner.png","home/logo-diced.png","manageit-logo.png","robots.txt","services/cloud-migration-secondary.svg","services/cloud-migration.svg","services/endpoint-management.png","services/endpoint-management.svg","services/endpoint-secondary.svg","services/it-support-secondary.svg","services/it-support.png","services/it-support.svg","services/networking-secondary.svg","services/networking.png","services/networking.svg","sitemap.xml","sw.js","testimonials/ShantyTown.jpg","testimonials/WindowTreatments.jpg","testimonials/bond-refund-form.pdf"]),
 	mimeTypes: {".svg":"image/svg+xml",".png":"image/png",".txt":"text/plain",".xml":"text/xml",".js":"text/javascript",".jpg":"image/jpeg",".pdf":"application/pdf"},
 	_: {
-		client: {start:"_app/immutable/entry/start.DesD8GJ-.js",app:"_app/immutable/entry/app.Ygp40gAz.js",imports:["_app/immutable/entry/start.DesD8GJ-.js","_app/immutable/chunks/f0bj1gry.js","_app/immutable/chunks/DxhZTZ8C.js","_app/immutable/chunks/CtmFNguk.js","_app/immutable/entry/app.Ygp40gAz.js","_app/immutable/chunks/DxhZTZ8C.js","_app/immutable/chunks/DrSjkpCF.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.Daj56AHX.js",app:"_app/immutable/entry/app.Dyz3ayHP.js",imports:["_app/immutable/entry/start.Daj56AHX.js","_app/immutable/chunks/TRTAsjZB.js","_app/immutable/chunks/D2ApFA8o.js","_app/immutable/chunks/CEh0G9RR.js","_app/immutable/entry/app.Dyz3ayHP.js","_app/immutable/chunks/D2ApFA8o.js","_app/immutable/chunks/CEUEl-4r.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),

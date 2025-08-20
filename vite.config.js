@@ -15,7 +15,7 @@ export default defineConfig({
 		rollupOptions: {
 			output: {
 				manualChunks: {
-					vendor: ['svelte', '@sendgrid/mail'],
+					vendor: ['svelte'],
 					icons: ['flowbite-svelte-icons']
 				}
 			}
