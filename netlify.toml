@@ -17,11 +17,13 @@
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; media-src 'self'; object-src 'none'; frame-ancestors 'none';"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
+# SvelteKit immutable assets (1 year cache)
 [[headers]]
   for = "/_app/immutable/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Images (1 day cache)
 [[headers]]
   for = "/favicon.png"
   [headers.values]
@@ -38,9 +40,47 @@
     Cache-Control = "public, max-age=86400"
 
 [[headers]]
+  for = "*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
   for = "*.svg"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# CSS and JS files (1 day cache with revalidation)
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+# Fonts (1 month cache)
+[[headers]]
+  for = "*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+# JSON files (1 hour cache)
+[[headers]]
+  for = "*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
 
 # Preload important resources
 [[headers]]

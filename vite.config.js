@@ -8,16 +8,21 @@ export default defineConfig({
 		terserOptions: {
 			compress: {
 				drop_console: true,
-				drop_debugger: true
+				drop_debugger: true,
+				pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn']
 			}
 		},
 		rollupOptions: {
 			output: {
 				manualChunks: {
-					vendor: ['svelte']
+					vendor: ['svelte', '@sendgrid/mail'],
+					icons: ['flowbite-svelte-icons']
 				}
 			}
-		}
+		},
+		// Ensure maximum compression
+		chunkSizeWarningLimit: 1600,
+		assetsInlineLimit: 4096
 	},
 	optimizeDeps: {
 		include: ['flowbite-svelte', 'flowbite-svelte-icons']
