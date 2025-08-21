@@ -336,7 +336,7 @@
                                 allowfullscreen=""
                                 loading="lazy"
                                 title="Google Maps - Manage IT Digital Ltd Location"
-                                referrerpolicy="no-referrer-when-downgrade"
+                                referrerpolicy="strict-origin-when-cross-origin"
                                 class="w-full h-full"
                             ></iframe>
                         </div>
