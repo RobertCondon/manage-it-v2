@@ -78,22 +78,16 @@
         isSubmitting = true;
         
         try {
-            // Send email via Netlify function
-            const response = await fetch('/.netlify/functions/send-email', {
+            // Use native form submission for Netlify Forms
+            const formElement = event.target;
+            const response = await fetch('/', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ...formData,
-                    formType: 'quote'
-                })
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(formElement)).toString()
             });
             
-            const result = await response.json();
-            
             if (!response.ok) {
-                throw new Error(result.error || 'Failed to send email');
+                throw new Error('Failed to submit form');
             }
             
             sentEmail = true;
@@ -175,12 +169,15 @@
                     <p class="text-muted-foreground">We'll be in touch shortly to discuss your needs.</p>
                 </div>
             {:else}
-                <form class="space-y-4" on:submit={handleSubmit}>
+                <form class="space-y-4" on:submit={handleSubmit} netlify name="quote-request" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="quote-request" />
+                    <input name="bot-field" style="display: none;" />
                     <div class="space-y-2">
                         <div class="flex items-start gap-2">
                             <div class="flex-1 space-y-1">
                                 <input 
                                     type="email" 
+                                    name="email"
                                     placeholder="Enter your email" 
                                     class="input flex-1 {errors.email ? 'border-red-500' : ''}" 
                                     bind:value={formData.email}
@@ -208,6 +205,7 @@
                                 <div class="space-y-1">
                                     <input 
                                         type="text" 
+                                        name="name"
                                         placeholder="Your name *" 
                                         class="input {errors.name ? 'border-red-500' : ''}"
                                         bind:value={formData.name}
@@ -221,6 +219,7 @@
                                 <div>
                                     <input 
                                         type="text" 
+                                        name="company"
                                         placeholder="Company (optional)" 
                                         class="input"
                                         bind:value={formData.company}
@@ -230,6 +229,7 @@
                             <div>
                                 <input 
                                     type="tel" 
+                                    name="phone"
                                     placeholder="Phone number (optional)" 
                                     class="input"
                                     bind:value={formData.phone}
@@ -237,6 +237,7 @@
                             </div>
                             <div class="space-y-1">
                                 <textarea 
+                                    name="message"
                                     placeholder="Tell us about your IT needs and requirements *" 
                                     class="textarea min-h-[120px] {errors.message ? 'border-red-500' : ''}"
                                     bind:value={formData.message}

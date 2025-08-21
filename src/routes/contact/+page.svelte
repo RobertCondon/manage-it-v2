@@ -70,24 +70,16 @@
         isSubmitting = true;
         
         try {
-            // Send email via Netlify function
-            const response = await fetch('/.netlify/functions/send-email', {
+            // Use native form submission for Netlify Forms
+            const formElement = event.target;
+            const response = await fetch('/', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: email.trim(),
-                    name: name.trim(),
-                    message: message.trim(),
-                    formType: 'contact'
-                })
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(formElement)).toString()
             });
             
-            const result = await response.json();
-            
             if (!response.ok) {
-                throw new Error(result.error || 'Failed to send email');
+                throw new Error('Failed to submit form');
             }
             
             submitted = true;
@@ -145,13 +137,16 @@
                                     <p class="text-gray-600">Fill out the form below and we'll respond as soon as possible.</p>
                                 </div>
                                 
-                                <form class="space-y-6" on:submit={handleSubmit}>
+                                <form class="space-y-6" on:submit={handleSubmit} netlify name="contact" netlify-honeypot="bot-field">
+                                    <input type="hidden" name="form-name" value="contact" />
+                                    <input name="bot-field" style="display: none;" />
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div class="space-y-2">
                                             <label for="name" class="block text-sm font-semibold text-gray-700">Full Name *</label>
                                             <input
                                                 id="name"
                                                 type="text"
+                                                name="name"
                                                 placeholder="John Doe"
                                                 class="w-full px-4 py-3 border-2 rounded-xl text-sm transition-colors focus:outline-none focus:border-blue-500 {errors.name ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50'}"
                                                 bind:value={name}
@@ -174,6 +169,7 @@
                                             <input
                                                 id="email"
                                                 type="email"
+                                                name="email"
                                                 placeholder="john@example.com"
                                                 class="w-full px-4 py-3 border-2 rounded-xl text-sm transition-colors focus:outline-none focus:border-blue-500 {errors.email ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50'}"
                                                 bind:value={email}
@@ -196,6 +192,7 @@
                                         <label for="message" class="block text-sm font-semibold text-gray-700">Message *</label>
                                         <textarea
                                             id="message"
+                                            name="message"
                                             placeholder="Tell us about your project or how we can help you..."
                                             rows="5"
                                             class="w-full px-4 py-3 border-2 rounded-xl text-sm resize-none transition-colors focus:outline-none focus:border-blue-500 {errors.message ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50'}"
