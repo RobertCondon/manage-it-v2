@@ -11,6 +11,7 @@
 		"build:test": "npm run build && npm run test",
 		"build:check": "svelte-check && npm run build",
 		"build:validate": "npm run build && node scripts/validate-build.js",
+		"lighthouse": "node scripts/lighthouse-audit.js",
 		"lint": "eslint . --ext .js,.ts,.svelte",
 		"format": "prettier --write .",
 		"validate": "npm run build:check && npm run test",

@@ -179,6 +179,7 @@
                                     type="email" 
                                     name="email"
                                     placeholder="Enter your email" 
+                                    aria-label="Email address for quote request"
                                     class="input flex-1 {errors.email ? 'border-red-500' : ''}" 
                                     bind:value={formData.email}
                                     on:input={handleEmailInput}
@@ -207,6 +208,7 @@
                                         type="text" 
                                         name="name"
                                         placeholder="Your name *" 
+                                        aria-label="Your full name"
                                         class="input {errors.name ? 'border-red-500' : ''}"
                                         bind:value={formData.name}
                                         on:blur={validateName}
@@ -221,6 +223,7 @@
                                         type="text" 
                                         name="company"
                                         placeholder="Company (optional)" 
+                                        aria-label="Company name (optional)"
                                         class="input"
                                         bind:value={formData.company}
                                     />
@@ -231,6 +234,7 @@
                                     type="tel" 
                                     name="phone"
                                     placeholder="Phone number (optional)" 
+                                    aria-label="Phone number (optional)"
                                     class="input"
                                     bind:value={formData.phone}
                                 />
@@ -239,6 +243,7 @@
                                 <textarea 
                                     name="message"
                                     placeholder="Tell us about your IT needs and requirements *" 
+                                    aria-label="Describe your IT needs and requirements"
                                     class="textarea min-h-[120px] {errors.message ? 'border-red-500' : ''}"
                                     bind:value={formData.message}
                                     on:blur={validateMessage}

@@ -2,6 +2,11 @@
     import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 
+<svelte:head>
+    <title>Endpoint Management Services - Manage IT Digital | Device Management</title>
+    <meta name="description" content="Complete endpoint management solutions for businesses. Secure, monitor, and manage all devices from a single dashboard with expert IT support." />
+</svelte:head>
+
 <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">
     <main class="flex-1">
         <!-- Hero Section -->

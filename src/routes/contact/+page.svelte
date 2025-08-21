@@ -1,4 +1,5 @@
 <script>
+    import { page } from '$app/stores';
     let name = '';
     let email = '';
     let message = '';
@@ -92,6 +93,11 @@
     }
 </script>
 
+<svelte:head>
+    <title>Contact Us - Manage IT Digital | IT Support Christchurch</title>
+    <meta name="description" content="Get in touch with Manage IT Digital for expert IT support, cloud migration, and managed services in Christchurch. Contact us today for a free consultation." />
+</svelte:head>
+
 <div class="flex flex-col min-h-[100dvh] bg-gradient-to-br from-slate-50 to-blue-50">
     <main class="flex-1">
         <!-- Hero Section -->
@@ -142,12 +148,13 @@
                                     <input name="bot-field" style="display: none;" />
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div class="space-y-2">
-                                            <label for="name" class="block text-sm font-semibold text-gray-700">Full Name *</label>
+                                            <label for="name" id="name-label" class="block text-sm font-semibold text-gray-700">Full Name *</label>
                                             <input
                                                 id="name"
                                                 type="text"
                                                 name="name"
                                                 placeholder="John Doe"
+                                                aria-describedby="name-label"
                                                 class="w-full px-4 py-3 border-2 rounded-xl text-sm transition-colors focus:outline-none focus:border-blue-500 {errors.name ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50'}"
                                                 bind:value={name}
                                                 on:blur={validateName}
@@ -165,12 +172,13 @@
                                         </div>
                                         
                                         <div class="space-y-2">
-                                            <label for="email" class="block text-sm font-semibold text-gray-700">Email Address *</label>
+                                            <label for="email" id="email-label" class="block text-sm font-semibold text-gray-700">Email Address *</label>
                                             <input
                                                 id="email"
                                                 type="email"
                                                 name="email"
                                                 placeholder="john@example.com"
+                                                aria-describedby="email-label"
                                                 class="w-full px-4 py-3 border-2 rounded-xl text-sm transition-colors focus:outline-none focus:border-blue-500 {errors.email ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50'}"
                                                 bind:value={email}
                                                 on:blur={validateEmail}
@@ -189,12 +197,13 @@
                                     </div>
                                     
                                     <div class="space-y-2">
-                                        <label for="message" class="block text-sm font-semibold text-gray-700">Message *</label>
+                                        <label for="message" id="message-label" class="block text-sm font-semibold text-gray-700">Message *</label>
                                         <textarea
                                             id="message"
                                             name="message"
                                             placeholder="Tell us about your project or how we can help you..."
                                             rows="5"
+                                            aria-describedby="message-label"
                                             class="w-full px-4 py-3 border-2 rounded-xl text-sm resize-none transition-colors focus:outline-none focus:border-blue-500 {errors.message ? 'border-red-300 bg-red-50' : 'border-gray-200 bg-gray-50'}"
                                             bind:value={message}
                                             on:blur={validateMessage}

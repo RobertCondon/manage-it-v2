@@ -2,6 +2,11 @@
     import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 
+<svelte:head>
+    <title>Cloud Backup Services - Manage IT Digital | Data Protection Christchurch</title>
+    <meta name="description" content="Secure cloud backup solutions to protect your business data. Automated backups, disaster recovery, and 24/7 monitoring by Christchurch IT experts." />
+</svelte:head>
+
 <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">
     <main class="flex-1">
         <!-- Hero Section -->

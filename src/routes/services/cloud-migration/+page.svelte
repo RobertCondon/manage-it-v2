@@ -2,6 +2,11 @@
     import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 
+<svelte:head>
+    <title>Cloud Migration Services - Manage IT Digital | Move to Cloud Safely</title>
+    <meta name="description" content="Professional cloud migration services to move your business to the cloud safely. Expert planning, execution, and ongoing support in Christchurch." />
+</svelte:head>
+
 <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">
     <main class="flex-1">
         <!-- Hero Section -->

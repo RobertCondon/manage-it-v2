@@ -2,6 +2,11 @@
     import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 
+<svelte:head>
+    <title>IT Support Services - Manage IT Digital | 24/7 IT Help Christchurch</title>
+    <meta name="description" content="24/7 IT support and managed services for Christchurch businesses. Proactive monitoring, helpdesk support, and strategic IT consulting." />
+</svelte:head>
+
 <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">
     <main class="flex-1">
         <!-- Hero Section -->
