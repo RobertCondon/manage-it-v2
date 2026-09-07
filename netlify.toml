@@ -23,36 +23,36 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Images (1 day cache)
+# Images (30 day cache; rename the file to bust)
 [[headers]]
   for = "/favicon.png"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=2592000"
 
 [[headers]]
   for = "*.png"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=2592000"
 
 [[headers]]
   for = "*.jpg"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=2592000"
 
 [[headers]]
   for = "*.jpeg"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=2592000"
 
 [[headers]]
   for = "*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=2592000"
 
 [[headers]]
   for = "*.svg"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=2592000"
 
 # CSS and JS files (1 day cache with revalidation)
 [[headers]]
@@ -86,4 +86,4 @@
 [[headers]]
   for = "/"
   [headers.values]
-    Link = "</manageit-logo.png>; rel=preload; as=image, </home/home-banner.png>; rel=preload; as=image"
+    Link = "</manageit-logo.png>; rel=preload; as=image"

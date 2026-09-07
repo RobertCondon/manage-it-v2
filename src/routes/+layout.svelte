@@ -1,5 +1,6 @@
 <script>
     import "../app.css";
+    import { page } from "$app/stores";
     import MobileNav from "$lib/components/MobileNav.svelte";
     import Nav from "$lib/components/Nav.svelte";
     import PortalModal from "$lib/components/PortalModal.svelte";
@@ -36,6 +37,10 @@
         return () => window.removeEventListener('resize', updateIsMobile);
     });
 </script>
+
+<svelte:head>
+    <link rel="canonical" href={`https://manageit.nz${$page.url.pathname}`} />
+</svelte:head>
 
 <!-- Skip Navigation Links -->
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-green-600 text-white px-4 py-2 rounded-md z-50">
