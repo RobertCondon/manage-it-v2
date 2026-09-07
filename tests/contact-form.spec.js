@@ -2,6 +2,20 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Contact Form Validation', () => {
   test.beforeEach(async ({ page }) => {
+    // The form posts to the Netlify Forms endpoint at '/', which does not exist
+    // under `vite preview`. Stub it so submission paths are testable locally
+    // and in CI. The delay keeps the "Sending..." state observable.
+    await page.route(
+      (url) => url.pathname === '/',
+      async (route) => {
+        if (route.request().method() !== 'POST') {
+          return route.fallback();
+        }
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        await route.fulfill({ status: 200, contentType: 'text/html', body: 'OK' });
+      }
+    );
+
     await page.goto('/contact');
   });
 

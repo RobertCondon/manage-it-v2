@@ -15,6 +15,7 @@ test.describe('Deployment Verification', () => {
   for (const pagePath of pages) {
     test(`${pagePath} loads without 404 errors`, async ({ page }) => {
       // Track failed requests
+      /** @type {{ url: string, status: number, statusText: string }[]} */
       const failedRequests = [];
       page.on('response', response => {
         if (response.status() >= 400) {
@@ -45,7 +46,7 @@ test.describe('Deployment Verification', () => {
       // Check for basic content (page didn't crash)
       const body = await page.textContent('body');
       expect(body).toBeTruthy();
-      expect(body.length).toBeGreaterThan(100);
+      expect((body ?? '').length).toBeGreaterThan(100);
     });
   }
 
@@ -54,12 +55,15 @@ test.describe('Deployment Verification', () => {
       await page.goto(pagePath);
       await page.waitForLoadState('networkidle');
       
-      // Check page doesn't show error
-      const hasError = await page.locator('text=500', 'text=404', 'text=error').count() > 0;
+      // Check page doesn't show error. SvelteKit's error page puts the status
+      // code in the heading, so match that rather than any text on the page.
+      const hasError =
+        (await page.locator('h1').filter({ hasText: /^\s*(404|500)\s*$/ }).count()) > 0;
       expect(hasError, `Page ${pagePath} shows error`).toBe(false);
       
-      // Check basic navigation elements exist
-      await expect(page.locator('nav')).toBeVisible();
+      // Check basic navigation elements exist. There are two <nav> elements
+      // (header and footer), so scope to the first.
+      await expect(page.locator('nav').first()).toBeVisible();
       await expect(page.locator('main')).toBeVisible();
     }
   });
