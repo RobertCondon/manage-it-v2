@@ -19,7 +19,7 @@
             name: 'Remote Access',
             description: 'Access your computer remotely from anywhere',
             icon: DesktopPcOutline,
-            url: 'https://manage-it.screenconnect.com/',
+            url: 'https://oc.ninjarmm.com/connect/#/',
             gradient: 'from-blue-500 to-blue-600'
         },
         {

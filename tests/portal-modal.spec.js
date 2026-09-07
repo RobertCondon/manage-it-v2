@@ -45,7 +45,7 @@ test.describe('Portal Modal', () => {
     
     // Check all service links have correct attributes and URLs
     const serviceLinks = [
-      { name: 'Remote Access', url: 'https://manage-it.screenconnect.com/' },
+      { name: 'Remote Access', url: 'https://oc.ninjarmm.com/connect/#/' },
       { name: 'Ticket Management', url: 'https://aus.myconnectwise.net/support/index.htm?Company=Manag31t' },
       { name: 'Office 365 Emails', url: 'https://outlook.office365.com/' },
       { name: 'Office 365 Portal', url: 'https://portal.office365.com/' },

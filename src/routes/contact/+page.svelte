@@ -260,8 +260,8 @@
                                     </div>
                                     <div>
                                         <h3 class="text-lg font-semibold text-gray-900">Visit Us</h3>
-                                        <p class="text-gray-600">Unit B1/92 Russley Road</p>
-                                        <p class="text-gray-600">Russley, Christchurch 8042</p>
+                                        <p class="text-gray-600">Unit 1/27A Sir William Pickering Drive</p>
+                                        <p class="text-gray-600">Burnside, Christchurch 8053</p>
                                     </div>
                                 </div>
                             </div>
@@ -342,7 +342,7 @@
                         </div>
                         <div class="aspect-video">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11573.80776468875!2d172.5382404!3d-43.5137675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d321fda58eb5c55%3A0x9b014512a73764dd!2sManage%20IT%20Digital%20Ltd!5e0!3m2!1sen!2snz!4v1727007793128!5m2!1sen!2snz"
+                                src="https://maps.google.com/maps?q=Unit%201%2F27A%20Sir%20William%20Pickering%20Drive%2C%20Burnside%2C%20Christchurch%208053%2C%20New%20Zealand&z=15&output=embed"
                                 width="100%"
                                 height="100%"
                                 style="border:0;"

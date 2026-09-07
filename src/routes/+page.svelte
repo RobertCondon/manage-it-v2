@@ -35,8 +35,10 @@
         "foundingDate": "2004-04-02",
         "address": {
             "@type": "PostalAddress",
-            "addressCountry": "NZ",
-            "addressLocality": "Auckland"
+            "streetAddress": "Unit 1/27A Sir William Pickering Drive",
+            "addressLocality": "Burnside, Christchurch",
+            "postalCode": "8053",
+            "addressCountry": "NZ"
         },
         "contactPoint": {
             "@type": "ContactPoint",
@@ -44,7 +46,7 @@
             "availableLanguage": "English"
         },
         "sameAs": [
-            "https://manage-it.screenconnect.com/",
+            "https://oc.ninjarmm.com/connect/#/",
             "https://aus.myconnectwise.net/support/index.htm?Company=Manag31t"
         ],
         "serviceArea": "New Zealand",
