@@ -4,6 +4,10 @@
     let message = '';
     let submitted = false;
     let submitError = '';
+    // The Google Maps embed pulls 1-2 MB of third-party script; the iframe is
+    // lazy (loads when scrolled near) and sits under a blur overlay that
+    // dissolves once it has loaded.
+    let mapLoaded = false;
     let isSubmitting = false;
     
     // Validation state
@@ -348,7 +352,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="aspect-video">
+                        <div class="aspect-video relative">
                             <iframe
                                 src="https://maps.google.com/maps?q=Unit%201%2F27A%20Sir%20William%20Pickering%20Drive%2C%20Burnside%2C%20Christchurch%208053%2C%20New%20Zealand&z=15&output=embed"
                                 width="100%"
@@ -359,7 +363,19 @@
                                 title="Google Maps - Manage IT Digital Ltd Location"
                                 referrerpolicy="strict-origin-when-cross-origin"
                                 class="w-full h-full"
+                                on:load={() => (mapLoaded = true)}
                             ></iframe>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-green-50/90 to-emerald-100/90 backdrop-blur-sm flex flex-col items-center justify-center gap-3 p-6 text-center transition-opacity duration-700 {mapLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}"
+                                aria-hidden={mapLoaded}
+                            >
+                                <svg class="w-10 h-10 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <p class="text-gray-700 font-medium">Unit 1/27A Sir William Pickering Drive<br />Burnside, Christchurch 8053</p>
+                                <p class="text-sm text-gray-500">Loading map&hellip;</p>
+                            </div>
                         </div>
                     </div>
                 </div>

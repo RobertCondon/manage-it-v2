@@ -18,9 +18,14 @@ const images = [
 for (const { src, widths } of images) {
 	const input = join(root, src);
 	for (const w of widths) {
-		const out = input.replace(/\.png$/, `-${w}.webp`);
-		await sharp(input).resize({ width: w }).webp({ quality: 82 }).toFile(out);
 		const kb = (n) => Math.round(statSync(n).size / 1024) + 'KB';
-		console.log(`${src} ${kb(input)} -> ${out.replace(root + '/', '')} ${kb(out)}`);
+		for (const [ext, make] of [
+			['avif', (i) => i.avif({ quality: 55 })],
+			['webp', (i) => i.webp({ quality: 82 })]
+		]) {
+			const out = input.replace(/\.png$/, `-${w}.${ext}`);
+			await make(sharp(input).resize({ width: w })).toFile(out);
+			console.log(`${src} ${kb(input)} -> ${out.replace(root + '/', '')} ${kb(out)}`);
+		}
 	}
 }

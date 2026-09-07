@@ -20,8 +20,23 @@
 		<link rel="preload" href="%sveltekit.assets%/manageit-logo.png" as="image" type="image/png">
 		
 		%sveltekit.head%
+
+		<!-- Chrome fully prerenders internal pages on hover/touchstart, making
+		     navigation instant; other browsers ignore this and fall back to
+		     SvelteKit's viewport preloading above. -->
+		<script type="speculationrules">
+		{
+			"prerender": [{
+				"where": { "and": [
+					{ "href_matches": "/*" },
+					{ "not": { "selector_matches": "[target=_blank]" } }
+				]},
+				"eagerness": "moderate"
+			}]
+		}
+		</script>
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<body data-sveltekit-preload-data="viewport">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

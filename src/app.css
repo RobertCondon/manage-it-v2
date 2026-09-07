@@ -46,4 +46,33 @@
     picture > source {
         display: none;
     }
+
+    /* Keep the site header out of the page cross-fade so navigation from
+       mid-page (e.g. service links) doesn't visibly jump; shorten the fade
+       so it reads as snappy rather than sluggish. Desktop only: naming the
+       header gives it paint containment, which would trap the mobile
+       drawer's fixed positioning inside the 56px header. */
+    @media (min-width: 768px) {
+        header {
+            view-transition-name: site-header;
+            /* view-transition-name creates a stacking context, which would
+               otherwise trap the services dropdown's z-index beneath the
+               page content -- lift the whole header above it. */
+            position: relative;
+            z-index: 40;
+        }
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 180ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        ::view-transition-group(*),
+        ::view-transition-old(*),
+        ::view-transition-new(*) {
+            animation: none !important;
+        }
+    }
 }

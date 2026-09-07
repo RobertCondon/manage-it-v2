@@ -20,6 +20,7 @@
             
             <!-- Logo Background -->
             <picture class="contents">
+                <source type="image/avif" srcset="/home/logo-diced-461.avif" />
                 <source type="image/webp" srcset="/home/logo-diced-461.webp" />
                 <img
                     src="/home/logo-diced.png"

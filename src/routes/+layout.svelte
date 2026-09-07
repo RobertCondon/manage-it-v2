@@ -1,6 +1,7 @@
 <script>
     import "../app.css";
     import { page } from "$app/stores";
+    import { onNavigate } from "$app/navigation";
     import MobileNav from "$lib/components/MobileNav.svelte";
     import Nav from "$lib/components/Nav.svelte";
     import PortalModal from "$lib/components/PortalModal.svelte";
@@ -16,6 +17,17 @@
     function openPortalModal() {
         showPortalModal = true;
     }
+
+    // Soft cross-fade between pages in browsers with the View Transitions API
+    onNavigate((navigation) => {
+        if (!document.startViewTransition) return;
+        return new Promise((resolve) => {
+            document.startViewTransition(async () => {
+                resolve();
+                await navigation.complete;
+            });
+        });
+    });
 
     function closePortalModal() {
         showPortalModal = false;

@@ -115,6 +115,11 @@
                 </div>
                 <picture class="contents">
                     <source
+                        type="image/avif"
+                        srcset="/home/home-banner-550.avif 550w, /home/home-banner-1100.avif 1100w"
+                        sizes="(max-width: 768px) 100vw, 550px"
+                    />
+                    <source
                         type="image/webp"
                         srcset="/home/home-banner-550.webp 550w, /home/home-banner-1100.webp 1100w"
                         sizes="(max-width: 768px) 100vw, 550px"
@@ -130,6 +135,7 @@
                 </picture>
             </div>
             <picture class="contents">
+                <source type="image/avif" srcset="/home/logo-diced-461.avif" />
                 <source type="image/webp" srcset="/home/logo-diced-461.webp" />
                 <img
                     src="/home/logo-diced.png"
@@ -151,12 +157,18 @@
                 <div class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
                     <picture class="contents">
                         <source
+                            type="image/avif"
+                            srcset="/home/experts-550.avif 550w, /home/experts-1100.avif 1100w"
+                            sizes="(max-width: 1024px) 100vw, 550px"
+                        />
+                        <source
                             type="image/webp"
                             srcset="/home/experts-550.webp 550w, /home/experts-1100.webp 1100w"
                             sizes="(max-width: 1024px) 100vw, 550px"
                         />
                         <img
                             src="/home/experts.png"
+                            fetchpriority="high"
                             width="550"
                             height="310"
                             alt="IT experts collaborating on technical solutions and computer networking"
