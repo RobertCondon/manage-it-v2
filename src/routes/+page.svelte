@@ -104,11 +104,11 @@
                     <p class="max-w-[600px] text-muted-foreground md:text-xl">
                         Manage IT is a leading provider of comprehensive computer networking services, helping businesses of all sizes optimize their IT infrastructure and achieve their goals.
                     </p>
-                    <div class="flex gap-2">
-                        <a href="/contact" class="inline-flex h-10 items-center justify-center rounded-md bg-green-700 hover:bg-green-800 px-8 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <a href="/contact" class="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md bg-green-700 hover:bg-green-800 px-8 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
                             Get a Quote
                         </a>
-                        <a href="/services/endpoint-management" class="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+                        <a href="/services/endpoint-management" class="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
                             Explore Our Services
                         </a>
                     </div>

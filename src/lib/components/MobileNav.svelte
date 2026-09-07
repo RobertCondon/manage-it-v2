@@ -35,17 +35,19 @@
     }
 </script>
 
-<div class="text-center" style="width: 100%; padding-top: 2rem">
-    <div class="flex justify-between" >
+<div class="w-full">
+    <div class="flex items-center justify-between">
         <button 
             on:click={() => (hidden2 = false)}
             aria-label="Open navigation menu"
             class="p-1 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500"
         >
-            <BarsOutline class="w-10 h-10 text-accentForeground"></BarsOutline>
+            <BarsOutline class="w-8 h-8 text-accentForeground"></BarsOutline>
         </button>
 
-        <img src="../manageit-logo.png" alt="ManageIt Logo" width="180" height="64" />
+        <a href="/" aria-label="Manage IT home">
+            <img src="/manageit-logo.png" alt="Manage IT" width="133" height="40" class="h-10 w-auto" />
+        </a>
     </div>
 </div>
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden2} id="sidebar2">
