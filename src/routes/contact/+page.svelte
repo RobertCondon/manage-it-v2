@@ -3,6 +3,7 @@
     let email = '';
     let message = '';
     let submitted = false;
+    let submitError = '';
     let isSubmitting = false;
     
     // Validation state
@@ -69,6 +70,7 @@
         }
 
         isSubmitting = true;
+        submitError = '';
         
         try {
             // Use native form submission for Netlify Forms
@@ -90,7 +92,7 @@
             submitted = true;
         } catch (error) {
             console.error('Error submitting form:', error);
-            alert('There was an error sending your message. Please try again or contact us directly at info@manageit.nz');
+            submitError = 'Something went wrong sending your message. Please try again, or email us directly at info@manageit.nz.';
         } finally {
             isSubmitting = false;
         }
@@ -224,6 +226,12 @@
                                         {/if}
                                     </div>
                                     
+                                    {#if submitError}
+                                        <div class="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4" role="alert">
+                                            {submitError}
+                                        </div>
+                                    {/if}
+
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}

@@ -216,7 +216,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Clear Communication</h4>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Clear Communication</h3>
                                 <p class="text-gray-600">We believe in transparent, jargon-free communication that keeps you informed every step of the way.</p>
                             </div>
                         </div>
@@ -228,7 +228,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Personalized Service</h4>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Personalized Service</h3>
                                 <p class="text-gray-600">Every business is unique, and our solutions are tailored to fit your specific needs and goals.</p>
                             </div>
                         </div>
@@ -240,7 +240,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Local Expertise</h4>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Local Expertise</h3>
                                 <p class="text-gray-600">Our tight-knit, locally-based team understands the New Zealand business landscape and your challenges.</p>
                             </div>
                         </div>

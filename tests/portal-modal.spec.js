@@ -11,7 +11,7 @@ test.describe('Portal Modal', () => {
     
     // Check that modal opens
     await expect(page.locator('[aria-labelledby="portal-modal-title"]')).toBeVisible();
-    await expect(page.locator('text=Client Portal')).toBeVisible();
+    await expect(page.locator('#portal-modal-title')).toBeVisible();
     await expect(page.locator('text=Quick access to all your IT services and tools')).toBeVisible();
   });
 
@@ -127,11 +127,11 @@ test.describe('Portal Modal', () => {
     await page.locator('[aria-label="bars outline"]').click();
     
     // Click Portal in mobile nav
-    await page.locator('text=Portal').click();
+    await page.getByRole('link', { name: 'Portal' }).click();
     
     // Check that modal opens
     await expect(page.locator('[aria-labelledby="portal-modal-title"]')).toBeVisible();
-    await expect(page.locator('text=Client Portal')).toBeVisible();
+    await expect(page.locator('#portal-modal-title')).toBeVisible();
     
     // Check mobile nav drawer is closed (by checking the drawer heading)
     await expect(page.locator('h5:has-text("Manage It")')).not.toBeVisible();

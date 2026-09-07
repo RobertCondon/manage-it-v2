@@ -37,7 +37,7 @@
                                     <AvatarImage src={item.src} />
                                 </Avatar>
                                 <div>
-                                    <h4 class="font-semibold">{item.name}</h4>
+                                    <h3 class="font-semibold">{item.name}</h3>
                                     <p class="text-sm text-muted-foreground">{item.position}</p>
                                 </div>
                             </div>

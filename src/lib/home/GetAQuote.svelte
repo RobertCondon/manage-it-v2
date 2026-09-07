@@ -12,6 +12,9 @@
         phone: ''
     };
     
+    // Submission failure message (shown inline in the form)
+    let submitError = '';
+
     // Validation errors
     let errors = {
         email: '',
@@ -76,6 +79,7 @@
         }
         
         isSubmitting = true;
+        submitError = '';
         
         try {
             // Use native form submission for Netlify Forms
@@ -97,7 +101,7 @@
             sentEmail = true;
         } catch (error) {
             console.error('Error submitting form:', error);
-            alert('There was an error submitting your request. Please try again or contact us directly.');
+            submitError = 'Something went wrong sending your request. Please try again, or email us at info@manageit.nz.';
         } finally {
             isSubmitting = false;
         }
@@ -134,7 +138,7 @@
 
     .button {
         padding: 0.75rem 1.5rem;
-        background-color: #16a34a;
+        background-color: #15803d; /* green-700: 4.5:1+ on white text */
         color: white;
         border: none;
         border-radius: 0.5rem;
@@ -146,7 +150,7 @@
     }
 
     .button:hover {
-        background-color: #15803d;
+        background-color: #166534;
         transform: translateY(-1px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
@@ -196,8 +200,8 @@
                             </div>
                             <button 
                                 type="submit" 
-                                class="button bg-green-600 hover:bg-green-700 {isSubmitting || !formData.email ? 'opacity-50 cursor-not-allowed' : ''}" 
-                                disabled={isSubmitting || !formData.email}
+                                class="button bg-green-700 hover:bg-green-800 {isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}" 
+                                disabled={isSubmitting}
                             >
                                 {isSubmitting ? 'Submitting...' : 'Get a Quote'}
                             </button>
@@ -260,12 +264,18 @@
                             <div class="flex justify-end">
                                 <button 
                                     type="submit" 
-                                    class="button bg-green-600 hover:bg-green-700 px-8 {isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}" 
+                                    class="button bg-green-700 hover:bg-green-800 px-8 {isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}" 
                                     disabled={isSubmitting}
                                 >
                                     {isSubmitting ? 'Submitting Request...' : 'Submit Quote Request'}
                                 </button>
                             </div>
+                        </div>
+                    {/if}
+
+                    {#if submitError}
+                        <div class="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4" role="alert">
+                            {submitError}
                         </div>
                     {/if}
                 </form>

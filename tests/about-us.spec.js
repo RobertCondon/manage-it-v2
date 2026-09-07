@@ -49,9 +49,9 @@ test.describe('About Us Page Design', () => {
     await expect(page.locator('h2:has-text("Into Simple Solutions")')).toBeVisible();
     
     // Check value points
-    await expect(page.locator('h4:has-text("Clear Communication")')).toBeVisible();
-    await expect(page.locator('h4:has-text("Personalized Service")')).toBeVisible();
-    await expect(page.locator('h4:has-text("Local Expertise")')).toBeVisible();
+    await expect(page.locator('h3:has-text("Clear Communication")')).toBeVisible();
+    await expect(page.locator('h3:has-text("Personalized Service")')).toBeVisible();
+    await expect(page.locator('h3:has-text("Local Expertise")')).toBeVisible();
     
     // Check founder card
     await expect(page.locator('h3:has-text("Tony Condon")')).toBeVisible();

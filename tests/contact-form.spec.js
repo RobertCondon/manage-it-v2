@@ -121,7 +121,7 @@ test.describe('Contact Form Validation', () => {
 
   test('displays modern design elements correctly', async ({ page }) => {
     // Check for modern design elements
-    await expect(page.locator('text=Get in Touch')).toBeVisible();
+    await expect(page.locator('h1:has-text("Get in Touch")')).toBeVisible();
     await expect(page.locator('text=Send us a Message')).toBeVisible();
     await expect(page.locator('h3:has-text("Visit Us")')).toBeVisible();
     await expect(page.locator('h3:has-text("Call Us")')).toBeVisible();
