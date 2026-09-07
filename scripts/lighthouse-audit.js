@@ -272,7 +272,7 @@ async function main() {
     const reportsDir = join(__dirname, '../reports');
     try {
         mkdirSync(reportsDir, { recursive: true });
-    } catch (error) {
+    } catch {
         // Directory already exists
     }
     

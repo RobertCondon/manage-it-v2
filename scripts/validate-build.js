@@ -25,7 +25,7 @@ console.log('🔍 Validating build integrity...\n');
 try {
   statSync(actualBuildDir);
   console.log('✅ Build directory exists');
-} catch (error) {
+} catch {
   console.error('❌ Build directory missing!');
   process.exit(1);
 }
@@ -41,7 +41,7 @@ for (const file of essentialFiles) {
     const filePath = join(actualBuildDir, file);
     statSync(filePath);
     console.log(`✅ ${file} exists`);
-  } catch (error) {
+  } catch {
     console.error(`❌ ${file} missing!`);
     process.exit(1);
   }
@@ -52,7 +52,7 @@ try {
   const manifestPath = join(actualBuildDir, '_app/version.json');
   const manifest = JSON.parse(readFileSync(manifestPath, 'utf-8'));
   console.log(`✅ Version: ${manifest.version}`);
-} catch (error) {
+} catch {
   console.error('❌ Version manifest corrupted!');
   process.exit(1);
 }
@@ -68,14 +68,14 @@ for (const route of routes) {
     statSync(routePath);
     console.log(`✅ Route /${route} exists (${route}.html)`);
     found = true;
-  } catch (error) {
+  } catch {
     // Try route/index.html format
     try {
       const routePath = join(actualBuildDir, route, 'index.html');
       statSync(routePath);
       console.log(`✅ Route /${route} exists (${route}/index.html)`);
       found = true;
-    } catch (error2) {
+    } catch {
       // Neither format found
     }
   }
@@ -100,7 +100,7 @@ try {
     console.error('❌ No JS files found in immutable directory!');
     process.exit(1);
   }
-} catch (error) {
+} catch {
   console.error('❌ Immutable assets directory missing or corrupted!');
   process.exit(1);
 }
