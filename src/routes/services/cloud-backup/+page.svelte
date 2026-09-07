@@ -1,4 +1,5 @@
 <script lang="ts">
+    import ServiceCta from "$lib/components/ServiceCta.svelte";
     import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 
@@ -18,11 +19,14 @@
             </div>
             
             <!-- Logo Background -->
-            <img 
-                src="/home/logo-diced.png" 
-                alt="ManageIT logo decorative element" 
-                class="absolute right-0 top-0 w-1/3 h-full object-cover opacity-30 z-0" 
-            />
+            <picture class="contents">
+                <source type="image/webp" srcset="/home/logo-diced-461.webp" />
+                <img
+                    src="/home/logo-diced.png"
+                    alt=""
+                    class="absolute right-0 top-0 w-1/3 h-full object-cover opacity-30 z-0"
+                />
+            </picture>
             
             <div class="container px-4 md:px-6 relative z-10">
                 <div class="grid items-center gap-8 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
@@ -53,7 +57,7 @@
                                     <CheckOutline class="w-4 h-4 text-white" />
                                 </div>
                                 <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Daily Backups</h3>
+                                    <h2 class="text-lg font-semibold text-gray-900 mb-1">Daily Backups</h2>
                                     <p class="text-gray-600">Daily backups for Microsoft 365, Google Workplace, and critical business data.</p>
                                 </div>
                             </div>
@@ -63,7 +67,7 @@
                                     <CheckOutline class="w-4 h-4 text-white" />
                                 </div>
                                 <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Data Integrity Testing</h3>
+                                    <h2 class="text-lg font-semibold text-gray-900 mb-1">Data Integrity Testing</h2>
                                     <p class="text-gray-600">Regular recoverability testing to ensure data integrity.</p>
                                 </div>
                             </div>
@@ -73,7 +77,7 @@
                                     <CheckOutline class="w-4 h-4 text-white" />
                                 </div>
                                 <div>
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Flexible Storage</h3>
+                                    <h2 class="text-lg font-semibold text-gray-900 mb-1">Flexible Storage</h2>
                                     <p class="text-gray-600">Flexible storage options to suit your business needs.</p>
                                 </div>
                             </div>
@@ -196,5 +200,6 @@
                 </div>
             </div>
         </section>
+        <ServiceCta service="cloud backup" />
     </div>
 </div>

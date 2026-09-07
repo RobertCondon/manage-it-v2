@@ -105,30 +105,38 @@
                         Manage IT is a leading provider of comprehensive computer networking services, helping businesses of all sizes optimize their IT infrastructure and achieve their goals.
                     </p>
                     <div class="flex gap-2">
-                        <a href="/contact" class="inline-flex h-10 items-center justify-center rounded-md bg-green-600 hover:bg-green-700 px-8 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+                        <a href="/contact" class="inline-flex h-10 items-center justify-center rounded-md bg-green-700 hover:bg-green-800 px-8 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
                             Get a Quote
                         </a>
                         <a href="/services/endpoint-management" class="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
-                            Learn More
+                            Explore Our Services
                         </a>
                     </div>
                 </div>
-                <img 
-                    src="/home/home-banner.png" 
-                    srcset="/home/home-banner.png 550w"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    width="550" 
-                    height="550" 
-                    alt="IT professionals working on network infrastructure and computer systems" 
-                    class="mx-auto max-w-[50%] overflow-hidden rounded-xl object-cover sm:w-full lg:order-last hidden md:block"
-                    fetchpriority="high"
-                />
+                <picture class="contents">
+                    <source
+                        type="image/webp"
+                        srcset="/home/home-banner-550.webp 550w, /home/home-banner-1100.webp 1100w"
+                        sizes="(max-width: 768px) 100vw, 550px"
+                    />
+                    <img
+                        src="/home/home-banner.png"
+                        width="550"
+                        height="550"
+                        alt="IT professionals working on network infrastructure and computer systems"
+                        class="mx-auto max-w-[50%] overflow-hidden rounded-xl object-cover sm:w-full lg:order-last hidden md:block"
+                        fetchpriority="high"
+                    />
+                </picture>
             </div>
-            <img 
-                src="/home/logo-diced.png" 
-                alt="ManageIT logo decorative element" 
-                class="absolute right-0 top-0 w-1/3 h-full object-cover opacity-30 -z-10" 
-            />
+            <picture class="contents">
+                <source type="image/webp" srcset="/home/logo-diced-461.webp" />
+                <img
+                    src="/home/logo-diced.png"
+                    alt=""
+                    class="absolute right-0 top-0 w-1/3 h-full object-cover opacity-30 -z-10"
+                />
+            </picture>
         </section>
         <section class="w-full py-12 md:py-24 lg:py-32 bg-muted flex justify-center">
             <div class="container px-4 md:px-6">
@@ -141,16 +149,20 @@
                     </div>
                 </div>
                 <div class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-                    <img 
-                        src="/home/experts.png" 
-                        srcset="/home/experts.png 550w"
-                        sizes="(max-width: 1024px) 100vw, 550px"
-                        width="550" 
-                        height="310" 
-                        alt="IT experts collaborating on technical solutions and computer networking" 
-                        class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last" 
-                        loading="lazy" 
-                    />
+                    <picture class="contents">
+                        <source
+                            type="image/webp"
+                            srcset="/home/experts-550.webp 550w, /home/experts-1100.webp 1100w"
+                            sizes="(max-width: 1024px) 100vw, 550px"
+                        />
+                        <img
+                            src="/home/experts.png"
+                            width="550"
+                            height="310"
+                            alt="IT experts collaborating on technical solutions and computer networking"
+                            class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                        />
+                    </picture>
                     <div class="flex flex-col justify-center space-y-4">
                         <ul class="grid gap-6">
                             <li>
@@ -200,7 +212,7 @@
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 max-w-2xl">
                             <a
                                     href="/services/cloud-migration"
-                                    class="inline-flex h-12 items-center justify-center rounded-md bg-green-600 hover:bg-green-700 px-6 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                                    class="inline-flex h-12 items-center justify-center rounded-md bg-green-700 hover:bg-green-800 px-6 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                             >
                                 Cloud Migration
                             </a>

@@ -39,4 +39,11 @@
     h1, h2, h3, h4, h5, h6 {
         @apply font-heading;
     }
+
+    /* <picture> wrappers use display:contents so the img participates in the
+       parent grid directly; without this, the <source> elements would also be
+       promoted to empty grid items and break the layout. */
+    picture > source {
+        display: none;
+    }
 }
