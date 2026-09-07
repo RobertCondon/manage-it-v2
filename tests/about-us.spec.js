@@ -90,7 +90,7 @@ test.describe('About Us Page Design', () => {
     await expect(page.locator('.from-green-100.to-emerald-100').first()).toBeVisible();
     
     // Check for green accent colors in stats
-    await expect(page.locator('.text-green-700')).toBeVisible();
+    await expect(page.locator('.text-green-700').first()).toBeVisible();
     await expect(page.locator('.text-emerald-700')).toBeVisible();
     await expect(page.locator('.text-teal-700')).toBeVisible();
   });

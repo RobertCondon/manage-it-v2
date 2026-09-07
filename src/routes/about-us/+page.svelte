@@ -258,7 +258,7 @@
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold text-gray-900 mb-2">Tony Condon</h3>
-                                <p class="text-green-600 font-medium mb-4">Founder & IT Director</p>
+                                <p class="text-green-700 font-medium mb-4">Founder &amp; IT Director</p>
                                 <p class="text-gray-600 leading-relaxed">
                                     "My vision was simple: bring enterprise-level IT services to small and medium businesses at a fair price. 
                                     Technology should empower your business, not complicate it."

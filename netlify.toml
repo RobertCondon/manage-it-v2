@@ -9,6 +9,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    Netlify-CDN-Cache-Control = "public, durable, s-maxage=31536000"
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
@@ -23,47 +24,41 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Images (30 day cache; rename the file to bust)
+# Images (1 year cache; rename the file to bust)
 [[headers]]
   for = "/favicon.png"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
+    Cache-Control = "public, max-age=31536000"
 
 [[headers]]
   for = "*.png"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
+    Cache-Control = "public, max-age=31536000"
 
 [[headers]]
   for = "*.jpg"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
+    Cache-Control = "public, max-age=31536000"
 
 [[headers]]
   for = "*.jpeg"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
+    Cache-Control = "public, max-age=31536000"
 
 [[headers]]
   for = "*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.avif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
 
 [[headers]]
   for = "*.svg"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
-
-# CSS and JS files (1 day cache with revalidation)
-[[headers]]
-  for = "*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=86400, must-revalidate"
-
-[[headers]]
-  for = "*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=86400, must-revalidate"
+    Cache-Control = "public, max-age=31536000"
 
 # Fonts (1 month cache)
 [[headers]]
