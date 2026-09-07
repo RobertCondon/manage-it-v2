@@ -3,7 +3,6 @@
     import AvatarImage from "$lib/components/AvatarImage.svelte";
     import Card from "$lib/components/Card.svelte";
 
-    let currentIndex = 0;
     let items = [
         {
             src: 'testimonials/WindowTreatments.jpg',
@@ -18,49 +17,7 @@
             quote: 'Manage IT scope and provide Shantytown\'s hardware and software, manage and maintain the server - its capacity and performance, system backups, troubleshooting and are generally our go-to team for all aspects of IT support. The best in responsive support, adaptability and professional courtesy.'
         }
     ];
-
-    function next() {
-        currentIndex = (currentIndex + 1) % items.length;
-    }
-
-    function previous() {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-    }
 </script>
-
-<style>
-    .carousel {
-        position: relative;
-    }
-
-    .carousel-content {
-        transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-previous,
-    .carousel-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    .carousel-previous {
-        left: 1rem;
-    }
-
-    .carousel-next {
-        right: 1rem;
-    }
-
-    .icon {
-        width: 1.5rem;
-        height: 1.5rem;
-        color: #a0aec0;
-    }
-</style>
 
 <section class="w-full py-12 md:py-24 lg:py-32 flex justify-center">
     <div class="container px-4 md:px-6">
@@ -72,8 +29,8 @@
                 </p>
             </div>
             <div class="grid max-w-3xl gap-6 sm:grid-cols-2">
-                {#each items as item}
-                    <Card class="p-6 shadow-md">
+                {#each items as item (item.name)}
+                    <Card>
                         <div class="space-y-4">
                             <div class="flex items-center gap-2">
                                 <Avatar>

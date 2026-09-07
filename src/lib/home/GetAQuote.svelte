@@ -1,6 +1,4 @@
 <script>
-    import { onMount } from 'svelte';
-
     let showAdditionalFields = false;
     let sentEmail = false;
     let isSubmitting = false;
@@ -21,8 +19,9 @@
         message: ''
     };
 
+    /** @param {Event & { currentTarget: HTMLInputElement }} event */
     function handleEmailInput(event) {
-        formData.email = event.target.value.trim();
+        formData.email = event.currentTarget.value.trim();
         showAdditionalFields = formData.email !== '';
         validateEmail();
     }
@@ -68,6 +67,7 @@
         return !errors.email && (!showAdditionalFields || (!errors.name && !errors.message));
     }
 
+    /** @param {SubmitEvent & { currentTarget: HTMLFormElement }} event */
     async function handleSubmit(event) {
         event.preventDefault();
         
@@ -79,11 +79,15 @@
         
         try {
             // Use native form submission for Netlify Forms
-            const formElement = event.target;
+            const formElement = event.currentTarget;
+            const body = new URLSearchParams();
+            for (const [key, value] of new FormData(formElement)) {
+                body.append(key, String(value));
+            }
             const response = await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(new FormData(formElement)).toString()
+                body: body.toString()
             });
             
             if (!response.ok) {
@@ -169,7 +173,7 @@
                     <p class="text-muted-foreground">We'll be in touch shortly to discuss your needs.</p>
                 </div>
             {:else}
-                <form class="space-y-4" on:submit={handleSubmit} netlify name="quote-request" netlify-honeypot="bot-field">
+                <form class="space-y-4" on:submit={handleSubmit} data-netlify="true" name="quote-request" data-netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="quote-request" />
                     <input name="bot-field" style="display: none;" />
                     <div class="space-y-2">

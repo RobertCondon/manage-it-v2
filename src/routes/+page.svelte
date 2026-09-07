@@ -1,7 +1,6 @@
 <script>
     import Testimonials from "$lib/home/Testimonials.svelte";
     import GetAQuote from "$lib/home/GetAQuote.svelte";
-    import { onMount } from "svelte";
 </script>
 
 <svelte:head>
@@ -93,7 +92,7 @@
 
 
 <div class="flex flex-col min-h-[100dvh]">
-    <main class="flex-1">
+    <div class="flex-1">
         <section class="w-full py-12 md:py-24 flex justify-center relative">
             <div class="container px-4 md:px-6 flex flex-row-reverse gap-8 lg:grid-cols-2 lg:gap-16 relative z-10">
                 <div class="space-y-4">
@@ -216,6 +215,6 @@
         </section>
         <Testimonials></Testimonials>
         <GetAQuote></GetAQuote>
-    </main>
+    </div>
 </div>
 

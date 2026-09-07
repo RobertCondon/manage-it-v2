@@ -12,6 +12,7 @@
     const dispatch = createEventDispatcher();
 
     let showServices = false;
+    /** @type {keyof typeof services} */
     let service = "Services";
     let services = {
         "Services": {
@@ -40,6 +41,7 @@
         showServices = !showServices;
     }
 
+    /** @param {keyof typeof services} serviceName */
     function setService(serviceName) {
         service = serviceName;
     }
@@ -94,8 +96,8 @@
     }
 
     .portal-link:focus-visible {
-        outline: none;
-        ring: 1px var(--ring);
+        outline: 2px solid hsl(var(--ring));
+        outline-offset: 2px;
     }
 
     .portal-link:disabled {
@@ -181,34 +183,11 @@
         font-size: 0.875rem
     }
 
-    .service-description .learn-more {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: var(--primary);
-    }
-
-    .service-description .learn-more:hover {
-        text-decoration: underline;
-    }
-
-    .arrow {
-        color: #008000;
-        display: none;
-    }
-
     .links {
         display: flex;
         gap: 1rem;
         align-content: center;
         align-items: center;
-    }
-
-    .arrow-icon .show {
-        display: block;
-        transition: 4s;
     }
 </style>
 

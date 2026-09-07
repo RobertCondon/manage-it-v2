@@ -1,5 +1,4 @@
 <script>
-    import { page } from '$app/stores';
     let name = '';
     let email = '';
     let message = '';
@@ -61,6 +60,7 @@
         return nameValid && emailValid && messageValid;
     }
 
+    /** @param {SubmitEvent & { currentTarget: HTMLFormElement }} event */
     async function handleSubmit(event) {
         event.preventDefault();
         
@@ -72,11 +72,15 @@
         
         try {
             // Use native form submission for Netlify Forms
-            const formElement = event.target;
+            const formElement = event.currentTarget;
+            const body = new URLSearchParams();
+            for (const [key, value] of new FormData(formElement)) {
+                body.append(key, String(value));
+            }
             const response = await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(new FormData(formElement)).toString()
+                body: body.toString()
             });
             
             if (!response.ok) {
@@ -99,7 +103,7 @@
 </svelte:head>
 
 <div class="flex flex-col min-h-[100dvh] bg-gradient-to-br from-slate-50 to-blue-50">
-    <main class="flex-1">
+    <div class="flex-1">
         <!-- Hero Section -->
         <section class="w-full py-12 md:py-24 flex justify-center">
             <div class="container px-4 md:px-6">
@@ -143,7 +147,7 @@
                                     <p class="text-gray-600">Fill out the form below and we'll respond as soon as possible.</p>
                                 </div>
                                 
-                                <form class="space-y-6" on:submit={handleSubmit} netlify name="contact" netlify-honeypot="bot-field">
+                                <form class="space-y-6" on:submit={handleSubmit} data-netlify="true" name="contact" data-netlify-honeypot="bot-field">
                                     <input type="hidden" name="form-name" value="contact" />
                                     <input name="bot-field" style="display: none;" />
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -342,7 +346,7 @@
                                 width="100%"
                                 height="100%"
                                 style="border:0;"
-                                allowfullscreen=""
+                                allowfullscreen
                                 loading="lazy"
                                 title="Google Maps - Manage IT Digital Ltd Location"
                                 referrerpolicy="strict-origin-when-cross-origin"
@@ -353,5 +357,5 @@
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 </div>

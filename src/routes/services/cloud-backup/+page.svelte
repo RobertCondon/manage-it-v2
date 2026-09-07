@@ -8,7 +8,7 @@
 </svelte:head>
 
 <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">
-    <main class="flex-1">
+    <div class="flex-1">
         <!-- Hero Section -->
         <section class="relative w-full py-16 md:py-24 lg:py-32 px-[10vw] overflow-hidden">
             <!-- Background decorative elements -->
@@ -196,5 +196,5 @@
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 </div>

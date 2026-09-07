@@ -64,12 +64,14 @@
         dispatch('close');
     }
 
+    /** @param {MouseEvent} event */
     function handleBackdropClick(event) {
         if (event.target === event.currentTarget) {
             closeModal();
         }
     }
 
+    /** @param {KeyboardEvent} event */
     function handleKeydown(event) {
         if (event.key === 'Escape') {
             closeModal();
@@ -118,7 +120,7 @@
             <!-- Modal body -->
             <div class="p-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {#each portalServices as service}
+                    {#each portalServices as service (service.url)}
                         <a 
                             href={service.url}
                             target="_blank"
