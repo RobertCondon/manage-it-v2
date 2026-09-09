@@ -15,8 +15,7 @@ export default defineConfig({
 		rollupOptions: {
 			output: {
 				manualChunks: {
-					vendor: ['svelte'],
-					icons: ['flowbite-svelte-icons']
+					vendor: ['svelte']
 				}
 			}
 		},
@@ -25,6 +24,6 @@ export default defineConfig({
 		assetsInlineLimit: 4096
 	},
 	optimizeDeps: {
-		include: ['flowbite-svelte', 'flowbite-svelte-icons']
+		include: []
 	}
 });

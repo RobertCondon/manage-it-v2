@@ -1,14 +1,12 @@
 <script>
     import { createEventDispatcher } from 'svelte';
-    import { 
-        DesktopPcOutline,
-        TicketOutline,
-        MailBoxOutline,
-        CloudArrowUpOutline,
-        ShieldCheckOutline,
-        DownloadOutline,
-        CloseOutline
-    } from 'flowbite-svelte-icons';
+    import DesktopPcOutline from "$lib/icons/DesktopPcOutline.svelte";
+    import TicketOutline from "$lib/icons/TicketOutline.svelte";
+    import MailBoxOutline from "$lib/icons/MailBoxOutline.svelte";
+    import CloudArrowUpOutline from "$lib/icons/CloudArrowUpOutline.svelte";
+    import ShieldCheckOutline from "$lib/icons/ShieldCheckOutline.svelte";
+    import DownloadOutline from "$lib/icons/DownloadOutline.svelte";
+    import CloseOutline from "$lib/icons/CloseOutline.svelte";
 
     export let isOpen = false;
     

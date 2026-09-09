@@ -1,13 +1,11 @@
 <script>
     import { createEventDispatcher } from 'svelte';
-    import {
-        ArrowRightOutline,
-        LifeSaverOutline,
-        ChartLineUpOutline,
-        MailBoxOutline,
-        CloudArrowUpOutline,
-        DesktopPcOutline,
-    } from 'flowbite-svelte-icons';
+    import ArrowRightOutline from "$lib/icons/ArrowRightOutline.svelte";
+    import LifeSaverOutline from "$lib/icons/LifeSaverOutline.svelte";
+    import ChartLineUpOutline from "$lib/icons/ChartLineUpOutline.svelte";
+    import MailBoxOutline from "$lib/icons/MailBoxOutline.svelte";
+    import CloudArrowUpOutline from "$lib/icons/CloudArrowUpOutline.svelte";
+    import DesktopPcOutline from "$lib/icons/DesktopPcOutline.svelte";
 
     const dispatch = createEventDispatcher();
 

@@ -2,15 +2,7 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
-  content: [
-    './src/**/*.{html,js,svelte,ts}',
-    // Only the flowbite-svelte components the site actually uses (MobileNav);
-    // scanning the whole library generated ~17KB of unused utilities.
-    './node_modules/flowbite-svelte/dist/drawer/**/*.{svelte,js}',
-    './node_modules/flowbite-svelte/dist/sidebar/**/*.{svelte,js}',
-    './node_modules/flowbite-svelte/dist/utils/**/*.{svelte,js}',
-    './node_modules/flowbite-svelte/dist/toolbar/ToolbarButton.svelte',
-  ],
+  content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
       fontFamily: {

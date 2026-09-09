@@ -1,6 +1,6 @@
 <script lang="ts">
     import ServiceCta from "$lib/components/ServiceCta.svelte";
-    import { CheckOutline } from 'flowbite-svelte-icons';
+    import CheckOutline from "$lib/icons/CheckOutline.svelte";
 </script>
 
 <svelte:head>

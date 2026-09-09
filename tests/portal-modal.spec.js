@@ -127,7 +127,7 @@ test.describe('Portal Modal', () => {
     await page.locator('[aria-label="bars outline"]').click();
     
     // Click Portal in mobile nav
-    await page.getByRole('link', { name: 'Portal' }).click();
+    await page.getByRole('dialog', { name: 'Site navigation' }).getByRole('button', { name: 'Portal' }).click();
     
     // Check that modal opens
     await expect(page.locator('[aria-labelledby="portal-modal-title"]')).toBeVisible();

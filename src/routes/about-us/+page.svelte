@@ -1,5 +1,8 @@
 <script lang="ts">
-    import { BriefcaseOutline, LightbulbOutline, UsersGroupOutline, StarOutline } from "flowbite-svelte-icons";
+    import BriefcaseOutline from "$lib/icons/BriefcaseOutline.svelte";
+    import LightbulbOutline from "$lib/icons/LightbulbOutline.svelte";
+    import UsersGroupOutline from "$lib/icons/UsersGroupOutline.svelte";
+    import StarOutline from "$lib/icons/StarOutline.svelte";
 </script>
 
 <svelte:head>
