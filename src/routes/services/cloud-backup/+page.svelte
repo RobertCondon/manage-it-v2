@@ -6,6 +6,23 @@
 <svelte:head>
     <title>Cloud Backup Services - Manage IT Digital | Data Protection Christchurch</title>
     <meta name="description" content="Secure cloud backup solutions to protect your business data. Automated backups, disaster recovery, and 24/7 monitoring by Christchurch IT experts." />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Cloud Backups",
+        "serviceType": "Cloud backup and disaster recovery",
+        "description": "Daily backups for Microsoft 365, Google Workplace and critical business data, with regular recoverability testing, disaster recovery planning and scalable storage.",
+        "url": "https://manageit.nz/services/cloud-backup",
+        "provider": {
+            "@id": "https://manageit.nz/#business"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "New Zealand"
+        }
+    }
+    </script>
 </svelte:head>
 
 <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">

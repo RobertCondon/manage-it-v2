@@ -6,6 +6,23 @@
 <svelte:head>
     <title>Cloud Migration Services - Manage IT Digital | Move to Cloud Safely</title>
     <meta name="description" content="Professional cloud migration services to move your business to the cloud safely. Expert planning, execution, and ongoing support in Christchurch." />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Cloud Migration",
+        "serviceType": "Cloud migration",
+        "description": "Planning and execution of business moves to cloud infrastructure, with secure data migration, business continuity and post-migration support.",
+        "url": "https://manageit.nz/services/cloud-migration",
+        "provider": {
+            "@id": "https://manageit.nz/#business"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "New Zealand"
+        }
+    }
+    </script>
 </svelte:head>
 
 <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">

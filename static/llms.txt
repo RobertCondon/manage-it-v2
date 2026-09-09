@@ -1,0 +1,37 @@
+# Manage IT Digital Ltd (ManageIT)
+
+> Manage IT Digital is an IT services company in Christchurch, New Zealand,
+> founded in 2004 by Tony Condon. We provide managed IT support, cloud
+> backups, cloud migration, and endpoint management for small and medium
+> businesses across New Zealand, with a focus on clear communication and
+> personalised local service.
+
+Contact: Unit 1/27A Sir William Pickering Drive, Burnside, Christchurch 8053.
+Phone 03 381 0333 or 0800 648 787. Email info@manageit.nz.
+Hours: Monday-Friday, 9am-5pm NZT, with emergency support available.
+
+## Pages
+
+- [Home](https://manageit.nz/): Overview of our IT solutions and computer
+  networking services for New Zealand businesses.
+- [IT Support](https://manageit.nz/services/it-support): Remote and on-site
+  IT support - password resets, virus removal, proactive monitoring, and
+  regular maintenance.
+- [Cloud Backups](https://manageit.nz/services/cloud-backup): Daily backups
+  for Microsoft 365, Google Workplace and business data, with recoverability
+  testing and disaster recovery planning.
+- [Cloud Migration](https://manageit.nz/services/cloud-migration): Planning
+  and execution of moves to cloud infrastructure, with security and
+  business-continuity focus.
+- [Endpoint Management](https://manageit.nz/services/endpoint-management):
+  Remote monitoring and management of business devices, patching, and
+  proactive device support.
+- [About Us](https://manageit.nz/about-us): Company history, values, and the
+  team - 20+ years serving 100+ New Zealand businesses.
+- [Contact](https://manageit.nz/contact): Contact form, phone numbers, office
+  location and map.
+
+## Client portal
+
+Existing clients access remote support (NinjaOne), ticket management, and
+Microsoft 365 tools via the Portal button on any page of the site.

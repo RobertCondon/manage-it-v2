@@ -6,6 +6,23 @@
 <svelte:head>
     <title>IT Support Services - Manage IT Digital | 24/7 IT Help Christchurch</title>
     <meta name="description" content="24/7 IT support and managed services for Christchurch businesses. Proactive monitoring, helpdesk support, and strategic IT consulting." />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "IT Support",
+        "serviceType": "Managed IT support",
+        "description": "Remote and on-site IT support for Christchurch and New Zealand businesses: helpdesk, password resets, virus removal, proactive monitoring and regular maintenance.",
+        "url": "https://manageit.nz/services/it-support",
+        "provider": {
+            "@id": "https://manageit.nz/#business"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "New Zealand"
+        }
+    }
+    </script>
 </svelte:head>
 
 <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50 min-h-screen">

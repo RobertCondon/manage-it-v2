@@ -27,29 +27,54 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "ProfessionalService",
+        "@id": "https://manageit.nz/#business",
         "name": "ManageIT",
-        "description": "Leading provider of comprehensive IT solutions and computer networking services in New Zealand",
+        "legalName": "Manage IT Digital Ltd",
+        "description": "IT support, cloud backups, cloud migration and endpoint management for New Zealand businesses, based in Christchurch.",
         "url": "https://manageit.nz",
         "logo": "https://manageit.nz/manageit-logo.png",
+        "image": "https://manageit.nz/manageit-logo.png",
         "foundingDate": "2004-04-02",
+        "founder": {
+            "@type": "Person",
+            "name": "Tony Condon"
+        },
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Unit 1/27A Sir William Pickering Drive",
-            "addressLocality": "Burnside, Christchurch",
+            "addressLocality": "Burnside",
+            "addressRegion": "Christchurch",
             "postalCode": "8053",
             "addressCountry": "NZ"
         },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "availableLanguage": "English"
+        "telephone": "+64-3-381-0333",
+        "email": "info@manageit.nz",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
         },
-        "sameAs": [
-            "https://oc.ninjarmm.com/connect/#/",
-            "https://aus.myconnectwise.net/support/index.htm?Company=Manag31t"
+        "areaServed": {
+            "@type": "Country",
+            "name": "New Zealand"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "telephone": "+64-3-381-0333",
+                "email": "info@manageit.nz",
+                "availableLanguage": "English"
+            },
+            {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "telephone": "+64-800-648-787",
+                "availableLanguage": "English"
+            }
         ],
-        "serviceArea": "New Zealand",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "IT Services",
@@ -58,16 +83,24 @@
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Cloud Migration",
-                        "description": "Professional cloud migration services"
+                        "name": "IT Support",
+                        "url": "https://manageit.nz/services/it-support"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "IT Support",
-                        "description": "24/7 IT support and managed services"
+                        "name": "Cloud Backups",
+                        "url": "https://manageit.nz/services/cloud-backup"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Cloud Migration",
+                        "url": "https://manageit.nz/services/cloud-migration"
                     }
                 },
                 {
@@ -75,15 +108,7 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Endpoint Management",
-                        "description": "Comprehensive endpoint management solutions"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Cloud Backup",
-                        "description": "Secure cloud backup solutions"
+                        "url": "https://manageit.nz/services/endpoint-management"
                     }
                 }
             ]

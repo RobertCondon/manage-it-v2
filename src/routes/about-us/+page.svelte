@@ -27,13 +27,9 @@
                 "name": "Tony Condon",
                 "jobTitle": "Founder & IT Director"
             },
-            "description": "ManageIT was established on April 2, 2004, and has since grown to become a trusted provider of IT solutions.",
-            "numberOfEmployees": "20+",
-            "yearlyRevenue": {
-                "@type": "QuantitativeValue",
-                "value": "100+",
-                "unitText": "clients served"
-            }
+            "description": "ManageIT was established on April 2, 2004, and has since grown to become a trusted provider of IT solutions for over 100 New Zealand businesses.",
+            "url": "https://manageit.nz",
+            "@id": "https://manageit.nz/#business"
         }
     }
     </script>

@@ -1,9 +1,9 @@
+# manageit.nz — all crawlers welcome, including AI crawlers
+# (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended, etc.
+# are all covered by the wildcard below.)
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://manageit.nz/sitemap.xml
 
-# Block access to admin/development files
-Disallow: /_app/
-Disallow: /sw.js
+# A curated summary of this site for AI assistants lives at /llms.txt
